@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batata Scripts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#top" class="brand">
+        <span class="brand-icon"></span>
+        <span>Batata Scripts</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#projetos">Projetos</a>
+        <a href="#tutoriais">Tutoriais</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#apoie">Donate</a>
+        <a href="#discord">Discord</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container reveal">
+      <div class="hero-pill">VEXcode VR • Scripts • Downloads • Comunidade</div>
+
+      <h1>
+        O jeito mais foda de guardar e baixar seus projetos de robótica.
+      </h1>
+
+      <p class="hero-text">
+        Já deixei pronto os downloads, tutoriais e comunidade.
+        Tudo foi feito em uma semana, agradecimento a todos, Princípalmente ao cara que me doou 4 contokkkk.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projetos" class="btn btn-primary">Explorar projetos</a>
+        <a href="#tutoriais" class="btn btn-secondary">Ver tutoriais</a>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-stat">
+          <strong>5</strong>
+          <span>Projetos</span>
+        </div>
+        <div class="hero-stat">
+          <strong>3</strong>
+          <span>Tutoriais</span>
+        </div>
+        <div class="hero-stat">
+          <strong>2</strong>
+          <span>Devs</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section container">
+      <div class="section-head reveal">
+        <span class="section-tag">Downloads</span>
+        <h2>Projetos</h2>
+        <p>Baixe os arquivos direto. Cada card já está preparado pra download.</p>
+      </div>
+
+      <div class="projects-grid">
+        <a class="project-card reveal tilt-card" href="MovedorDeDisco.vrblocks" download>
+          <div class="shine"></div>
+          <div class="card-top">
+            <span class="icon-box">⬢</span>
+            <span class="mini-chip">VRBlocks</span>
+          </div>
+          <h3>Movedor de Disco</h3>
+          <p>Script focado em movimentação eficiente de discos com execução organizada.</p>
+          <span class="card-action">Baixar projeto</span>
+        </a>
+
+        <a class="project-card reveal tilt-card" href="DiskTransport.vrblocks" download>
+          <div class="shine"></div>
+          <div class="card-top">
+            <span class="icon-box">⬡</span>
+            <span class="mini-chip">VRBlocks</span>
+          </div>
+          <h3>Transporte de Disco</h3>
+          <p>Projeto preparado para transporte de discos com fluxo mais limpo e prático.</p>
+          <span class="card-action">Baixar projeto</span>
+        </a>
+
+        <a class="project-card reveal tilt-card" href="wall-maze.vrblocks" download>
+          <div class="shine"></div>
+          <div class="card-top">
+            <span class="icon-box">◈</span>
+            <span class="mini-chip">VRBlocks</span>
+          </div>
+          <h3>Labirinto de Parede</h3>
+          <p>Lógica de navegação para resolver labirintos com base em parede e direção.</p>
+          <span class="card-action">Baixar projeto</span>
+        </a>
+
+        <a class="project-card reveal tilt-card" href="castle-crashers.vrblocks" download>
+          <div class="shine"></div>
+          <div class="card-top">
+            <span class="icon-box">✦</span>
+            <span class="mini-chip">VRBlocks</span>
+          </div>
+          <h3>Castle Crasher</h3>
+          <p>Versão sólida do desafio, pensada para desempenho e visual mais profissional.</p>
+          <span class="card-action">Baixar projeto</span>
+        </a>
+
+        <a class="project-card reveal tilt-card" href="castle-crashers-dinamic.vrblocks" download>
+          <div class="shine"></div>
+          <div class="card-top">
+            <span class="icon-box">✧</span>
+            <span class="mini-chip">VRBlocks</span>
+          </div>
+          <h3>Castle Crasher Dinâmico</h3>
+          <p>Versão dinâmica com abordagem mais flexível e comportamento mais adaptável.</p>
+          <span class="card-action">Baixar projeto</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="tutoriais" class="section container">
+      <div class="section-head reveal">
+        <span class="section-tag">Tutoriais</span>
+        <h2>Aprenda e ajuste depois</h2>
+        <p>Agora cada tutorial abre uma página própria explicando como usar.</p>
+      </div>
+
+      <div class="tutorial-grid">
+        <a class="tutorial-card reveal tilt-card" href="tutorial-importar.html">
+          <div class="shine"></div>
+          <span class="mini-chip">Tutorial 01</span>
+          <h3>Como importar no VEXcode VR</h3>
+          <p>Aprenda onde abrir os arquivos e como carregar os projetos corretamente.</p>
+          <span class="ghost-btn">Abrir tutorial</span>
+        </a>
+
+        <a class="tutorial-card reveal tilt-card" href="tutorial-editar.html">
+          <div class="shine"></div>
+          <span class="mini-chip">Tutorial 02</span>
+          <h3>Como editar os scripts</h3>
+          <p>Veja como mudar os projetos sem quebrar a lógica principal.</p>
+          <span class="ghost-btn">Abrir tutorial</span>
+        </a>
+
+        <a class="tutorial-card reveal tilt-card" href="tutorial-entender.html">
+          <div class="shine"></div>
+          <span class="mini-chip">Tutorial 03</span>
+          <h3>Como entender os projetos</h3>
+          <p>Explicação da estrutura dos scripts e de como eles funcionam.</p>
+          <span class="ghost-btn">Abrir tutorial</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="sobre" class="section container">
+      <div class="section-head reveal">
+        <span class="section-tag">Equipe</span>
+        <h2>Sobre nós</h2>
+        <p>Clique nos cards para abrir a descrição.</p>
+      </div>
+
+      <div class="dev-grid">
+        <article class="dev-card reveal accordion tilt-card">
+          <div class="shine"></div>
+          <button class="accordion-trigger" type="button">
+            <div>
+              <strong>Batataokkj</strong>
+              <span>Dev principal</span>
+            </div>
+            <b>+</b>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Dev principal do Batata Scripts. Produtor dos projetos, Criador do site.
+              A gnt tbm tá precisando de + devs, caso esteja interessado, chama lá no dc.
+            </p>
+          </div>
+        </article>
+
+        <article class="dev-card reveal accordion tilt-card">
+          <div class="shine"></div>
+          <button class="accordion-trigger" type="button">
+            <div>
+              <strong>E-nzo</strong>
+              <span>Dev colaborador</span>
+            </div>
+            <b>+</b>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Um ótimo tester, Gente boa, Amassou o yuri no pingpongkkkk.
+              Ele que deu a ideia do Site, Dos scripts, dos projetos.
+              Eu nem teria feito esse site se nn fosse por ele kk.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <article class="story-card reveal tilt-card">
+        <div class="shine"></div>
+        <span class="section-tag">Criação</span>
+        <h3>Sobre a criação do site e dos projetos</h3>
+        <p>
+          Nosso Primeiro Projeto. foi criado para deixar tudo salvo aqui em só um lugar, facilitar os downloads e também "ajudar o pessoal q nn sabe fazer nada😒😒🥀🥀"
+          Em vez de deixar os arquivos perdidos, o site reúne os projetos, demorou 1 semana para fazer tudo, se ficou ruim, me perdoem fiz tudo na pressa.
+        </p>
+      </article>
+    </section>
+
+    <section id="apoie" class="section container">
+      <article class="cta-card reveal tilt-card">
+        <div class="shine"></div>
+        <div class="cta-text">
+          <span class="section-tag">Donate</span>
+          <h2>Apoie o projeto</h2>
+          <p>Se quiser fortalecer o site, os projetos novos e o conteúdo futuro, manda uma doação.</p>
+        </div>
+        <a class="btn btn-primary" href="https://pixgg.com/oBatataGG" target="_blank" rel="noopener noreferrer">
+          Doar via PixGG
+        </a>
+      </article>
+    </section>
+
+    <section id="discord" class="section container">
+      <article class="cta-card reveal tilt-card discord-card">
+        <div class="shine"></div>
+        <div class="cta-text">
+          <span class="section-tag">Discord</span>
+          <h2>Discord dos scripts</h2>
+          <p>Entra no servidor para acompanhar atualizações e trocar ideia.</p>
+        </div>
+        <a class="btn btn-secondary" href="https://discord.gg/dwq5qMEW" target="_blank" rel="noopener noreferrer">
+          Entrar no Discord
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Batata Scripts © 2026 • Projetos de robótica VEX • Feito pra ficar bonito de verdade</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
