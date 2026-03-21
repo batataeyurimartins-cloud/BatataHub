@@ -1,94 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Batata Hub</title>
-  <meta name="description" content="Hub principal dos projetos Batata: Scripts e Games.">
-  <link rel="stylesheet" href="assets/css/hub.css">
+<meta charset="UTF-8">
+<title>Batata Hub</title>
+<style>
+body { background:#0b0b12; color:white; font-family:Arial; margin:0; }
+nav { display:flex; justify-content:space-between; padding:15px 30px; background:#121225; }
+nav a { color:#a855f7; margin-left:15px; text-decoration:none; }
+.section { padding:40px; text-align:center; }
+.card { background:#181830; padding:20px; border-radius:15px; display:inline-block; margin:10px; }
+a.button { display:inline-block; margin-top:10px; padding:10px 20px; background:#a855f7; border-radius:10px; color:white; text-decoration:none; }
+</style>
 </head>
 <body>
-  <canvas id="stars"></canvas>
-  <div class="noise"></div>
-  <div class="cursor-glow" id="cursorGlow"></div>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
 
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="index.html" class="brand"><span class="brand-icon"></span><span>Batata Hub</span></a>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="scripts.html">Scripts</a>
-        <a href="games.html">Games</a>
-      </div>
-    </nav>
-  </header>
+<nav>
+<h2>Batata Hub</h2>
+<div>
+<a href="index.html">Home</a>
+<a href="scripts.html">Scripts</a>
+<a href="games.html">Games</a>
+</div>
+</nav>
 
-  <main>
-    <section class="hero hero-grid container">
-      <div>
-        <span class="hero-pill">Hub principal • premium roxo • tudo organizado</span>
-        <h1>Agora teus projetos vivem num lugar só.</h1>
-        <p class="hero-text">O Batata Hub junta a parte de scripts e a parte de jogos numa estrutura mais profissional. A aba <strong>Scripts</strong> já ficou pronta para receber o Batata Robótica e outros projetos no futuro.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="scripts.html">Abrir Scripts</a>
-          <a class="btn btn-secondary" href="games.html">Abrir Games</a>
-        </div>
-        <div class="hero-panel">
-          <div class="hero-stat"><strong>1</strong><span>Hub principal</span></div>
-          <div class="hero-stat"><strong>2</strong><span>Abas organizadas</span></div>
-          <div class="hero-stat"><strong>∞</strong><span>Espaço pra crescer</span></div>
-        </div>
-      </div>
+<div class="section">
+<h1>Bem-vindo ao Batata Hub</h1>
+<div class="card">
+<h3>💻 Scripts</h3>
+<a class="button" href="scripts.html">Abrir</a>
+</div>
+<div class="card">
+<h3>🎮 Games</h3>
+<a class="button" href="games.html">Abrir</a>
+</div>
+</div>
 
-      <aside class="hero-side glass-card">
-        <span class="mini-chip">Estrutura</span>
-        <h3>Do jeito certo pra GitHub + Vercel</h3>
-        <p>Agora ficou separado em páginas claras: home, scripts e games. Isso deixa o projeto mais limpo e facilita adicionar novas coisas sem bagunçar o resto.</p>
-        <div class="list">
-          <div>Scripts com espaço para vários projetos</div>
-          <div>Batata Robótica já integrado</div>
-          <div>Batata Games preservado e acessível</div>
-        </div>
-      </aside>
-    </section>
+<div class="section">
+<h2>Sobre Nós</h2>
+<p>Aqui vai o texto do seu Batata Robótica (copia e cola depois se quiser personalizar).</p>
+</div>
 
-    <section class="section container">
-      <div class="section-head">
-        <span class="section-tag">Acesso rápido</span>
-        <h2>Escolhe pra onde quer ir</h2>
-        <p>As duas áreas ficaram acessíveis sem misturar os códigos internos dos projetos.</p>
-      </div>
+<div class="section">
+<h2>Comunidade</h2>
+<a class="button" href="#">Entrar no Discord</a>
+</div>
 
-      <div class="grid grid-2">
-        <a class="card" href="scripts.html">
-          <div class="card-top">
-            <span class="icon-box">💻</span>
-            <span class="mini-chip">Scripts</span>
-          </div>
-          <h3>Batata Scripts</h3>
-          <p>Aqui ficam teus scripts, downloads, tutoriais e futuros projetos. O Batata Robótica já está como primeiro card dentro da aba.</p>
-          <span class="btn btn-secondary">Entrar na aba Scripts</span>
-        </a>
+<div class="section">
+<h2>Apoie o Projeto</h2>
+<a class="button" href="#">Pixgg</a>
+</div>
 
-        <a class="card" href="games.html">
-          <div class="card-top">
-            <span class="icon-box">🎮</span>
-            <span class="mini-chip">Games</span>
-          </div>
-          <h3>Batata Games</h3>
-          <p>Catálogo separado, organizado e pronto pra abrir os jogos sem confundir com a parte de scripts.</p>
-          <span class="btn btn-secondary">Entrar na aba Games</span>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer container">
-    <p>Batata Hub © 2026 • Home central dos teus projetos</p>
-  </footer>
-
-  <script src="assets/js/hub.js"></script>
 </body>
 </html>
