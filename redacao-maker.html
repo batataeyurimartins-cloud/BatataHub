@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redação Maker • Batata Hub</title>
+  <meta name="description" content="Página do Redação Maker no Batata Hub.">
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="brand"><span class="brand-icon"></span><span>Batata Hub</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="scripts.html" class="active">Scripts</a>
+        <a href="games.html">Games</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="hero-pill">Script • IA • Bookmarklet</span>
+      <h1>Redação Maker</h1>
+      <p class="hero-text">Copie o código abaixo e cole como favorito/bookmarklet ou onde você quiser usar no navegador.</p>
+    </section>
+
+    <section class="section container">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-top">
+            <span class="icon-box">⚡</span>
+            <span class="mini-chip">Pronto</span>
+          </div>
+          <h3>Script</h3>
+          <p>Esse é o código pronto do Redação Maker:</p>
+          <div style="margin-top:14px;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);word-break:break-all;color:#e9d5ff;">
+            <code id="scriptCode">javascript:(()=>{const s=document.createElement('script');s.src='https://redacao-maker.vercel.app/hub.js?t='+Date.now();document.documentElement.appendChild(s);})();</code>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;">
+            <button class="btn btn-primary" onclick="copyScript()">Copiar script</button>
+            <a class="btn btn-secondary" href="scripts.html">Voltar para Scripts</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="icon-box">📌</span>
+            <span class="mini-chip">Como usar</span>
+          </div>
+          <h3>Uso rápido</h3>
+          <p>Copie o código, crie um favorito no navegador e cole esse javascript no campo de URL do favorito. Depois é só clicar nele quando quiser usar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Batata Hub © 2026 • Redação Maker</p>
+  </footer>
+
+  <script>
+    function copyScript() {
+      const text = document.getElementById('scriptCode').innerText.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Script copiado!');
+      }).catch(() => {
+        alert('Não deu pra copiar automático. Copia manualmente o código da caixa.');
+      });
+    }
+  </script>
+  <script src="assets/js/hub.js"></script>
+</body>
+</html>
