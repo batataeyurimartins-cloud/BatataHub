@@ -26,54 +26,157 @@
   </header>
 
   <main>
-    <section class="hero container">
-      <span class="hero-pill">Script • IA • Bookmarklet</span>
-      <h1>Redação Maker</h1>
-      <p class="hero-text">Copie o código abaixo e cole como favorito/bookmarklet ou onde você quiser usar no navegador.</p>
+    <section class="hero hero-grid container">
+      <div class="reveal">
+        <span class="hero-pill">Script • IA • Bookmarklet</span>
+        <h1>Redação Maker com visual de ferramenta premium.</h1>
+        <p class="hero-text">Agora a página do Redação Maker tem mais cara de produto: destaque no script, botão forte de copiar e uma seção explicando como usar sem ficar feio.</p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" onclick="copyScript()">Copiar script</button>
+          <a class="btn btn-secondary" href="scripts.html">Voltar para Scripts</a>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="hero-stat">
+            <strong>1 clique</strong>
+            <span>Pra copiar</span>
+          </div>
+          <div class="hero-stat">
+            <strong>JS</strong>
+            <span>Bookmarklet pronto</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Live</strong>
+            <span>Carrega do teu link</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side reveal tilt-card">
+        <div class="shine"></div>
+        <span class="mini-chip">Resumo</span>
+        <h3>Direto ao ponto</h3>
+        <p>Tu entra na página, copia o script e usa. Sem enrolação e com apresentação bem mais bonita.</p>
+        <div class="list">
+          <div>Botão de copiar com aviso visual</div>
+          <div>Script em caixa destacada</div>
+          <div>Layout mais premium e limpo</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section container">
+      <div class="copy-layout">
+        <article class="copy-box reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Script</span>
+          <h2>Código pronto</h2>
+          <p>Esse é o código do Redação Maker. O botão abaixo já copia tudo de uma vez.</p>
+
+          <div class="script-preview">
+            <div class="shine"></div>
+            <code id="scriptCode">javascript:(()=>{const s=document.createElement('script');s.src='https://redacao-maker.vercel.app/hub.js?t='+Date.now();document.documentElement.appendChild(s);})();</code>
+          </div>
+
+          <div class="copy-actions">
+            <button class="btn btn-primary" type="button" onclick="copyScript()">Copiar script</button>
+            <button class="btn btn-secondary" type="button" onclick="selectScript()">Selecionar texto</button>
+          </div>
+
+          <div class="copy-note">
+            Dica: também dá pra criar um favorito no navegador e colar esse código no campo de URL.
+          </div>
+        </article>
+
+        <article class="steps-card reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Como usar</span>
+          <h2>Passo a passo</h2>
+          <p>Se quiser usar como bookmarklet, faz assim:</p>
+
+          <div class="steps-list">
+            <div class="step-line">
+              <div class="step-dot">1</div>
+              <div>
+                <h3>Copie o script</h3>
+                <p>Clique no botão de copiar aqui da página.</p>
+              </div>
+            </div>
+
+            <div class="step-line">
+              <div class="step-dot">2</div>
+              <div>
+                <h3>Crie um favorito</h3>
+                <p>Adicione qualquer página aos favoritos no navegador.</p>
+              </div>
+            </div>
+
+            <div class="step-line">
+              <div class="step-dot">3</div>
+              <div>
+                <h3>Edite a URL</h3>
+                <p>No favorito, apague a URL antiga e cole esse javascript.</p>
+              </div>
+            </div>
+
+            <div class="step-line">
+              <div class="step-dot">4</div>
+              <div>
+                <h3>Use quando quiser</h3>
+                <p>Abra a página desejada e clique no favorito salvo.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="section container">
       <div class="grid grid-2">
-        <div class="card">
-          <div class="card-top">
-            <span class="icon-box">⚡</span>
-            <span class="mini-chip">Pronto</span>
-          </div>
-          <h3>Script</h3>
-          <p>Esse é o código pronto do Redação Maker:</p>
-          <div style="margin-top:14px;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);word-break:break-all;color:#e9d5ff;">
-            <code id="scriptCode">javascript:(()=>{const s=document.createElement('script');s.src='https://redacao-maker.vercel.app/hub.js?t='+Date.now();document.documentElement.appendChild(s);})();</code>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;">
-            <button class="btn btn-primary" onclick="copyScript()">Copiar script</button>
-            <a class="btn btn-secondary" href="scripts.html">Voltar para Scripts</a>
-          </div>
-        </div>
+        <article class="feature-card reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Visual</span>
+          <h3>Mais bonito e mais forte</h3>
+          <p>Melhorei profundidade, brilho, cards, CTAs e hierarquia visual pra essa página parar de parecer improvisada.</p>
+        </article>
 
-        <div class="card">
-          <div class="card-top">
-            <span class="icon-box">📌</span>
-            <span class="mini-chip">Como usar</span>
-          </div>
-          <h3>Uso rápido</h3>
-          <p>Copie o código, crie um favorito no navegador e cole esse javascript no campo de URL do favorito. Depois é só clicar nele quando quiser usar.</p>
-        </div>
+        <article class="feature-card reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Uso rápido</span>
+          <h3>Sem gambiarra visual</h3>
+          <p>Agora o principal fica claro logo de cara: copiar o código e usar. O resto virou apoio visual em vez de bagunça.</p>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="footer container">
-    <p>Batata Hub © 2026 • Redação Maker</p>
+    <p>Batata Hub © 2026 • Redação Maker melhorado</p>
   </footer>
 
   <script>
+    function getScriptText() {
+      return document.getElementById('scriptCode').innerText.trim();
+    }
+
     function copyScript() {
-      const text = document.getElementById('scriptCode').innerText.trim();
+      const text = getScriptText();
       navigator.clipboard.writeText(text).then(() => {
-        alert('Script copiado!');
+        if (window.showToast) window.showToast('Script copiado!');
       }).catch(() => {
-        alert('Não deu pra copiar automático. Copia manualmente o código da caixa.');
+        if (window.showToast) window.showToast('Copia manualmente o texto da caixa.');
       });
+    }
+
+    function selectScript() {
+      const el = document.getElementById('scriptCode');
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      if (window.showToast) window.showToast('Texto selecionado!');
     }
   </script>
   <script src="assets/js/hub.js"></script>
