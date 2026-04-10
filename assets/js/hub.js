@@ -64,8 +64,8 @@ window.bindTiltCards = function bindTiltCards() {
       const rect = card.getBoundingClientRect();
       const px = (event.clientX - rect.left) / rect.width;
       const py = (event.clientY - rect.top) / rect.height;
-      const rotateY = (px - 0.5) * 8;
-      const rotateX = (0.5 - py) * 8;
+      const rotateY = (px - 0.5) * 7;
+      const rotateX = (0.5 - py) * 7;
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
     });
 
