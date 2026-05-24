@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batata Hub V7 • Engine de Quiz</title>
+  <meta name="description" content="Painel oficial do Batata Hub V7 com tela preta preventiva e overclock de pontos.">
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="brand"><span class="brand-icon"></span><span>Batata Hub</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="scripts.html" class="active">Scripts</a>
+        <a href="games.html">Games</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-grid container">
+      <div class="reveal">
+        <span class="hero-pill">Script • Automador • Violet Stealth</span>
+        <h1>Batata Hub V7, Overclock de pontos.</h1>
+        <p class="hero-text">Engine automatizada com tela preta e aviso de segurança para alta velocidade.</p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" onclick="copyScript()">Copiar script</button>
+          <a class="btn btn-secondary" href="scripts.html">Voltar para Scripts</a>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="hero-stat">
+            <strong>150 pts</strong>
+            <span>Por clique</span>
+          </div>
+          <div class="hero-stat">
+            <strong>V7</strong>
+            <span>Botão de Reset integrado</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Roxo</strong>
+            <span>Tema Tático Cyberpunk</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side reveal tilt-card">
+        <div class="shine"></div>
+        <span class="mini-chip">Novidades V7</span>
+        <h3>Sistema Estabilizado</h3>
+        <p>Entra na página do quiz, executa o script no console ou favoritos e deixa a mágica acontecer com total controle.</p>
+        <div class="list">
+          <div>Botão de Reset All para zerar tudo</div>
+          <div>Interface preta premium contra travamentos</div>
+          <div>Alerta de dessincronização do contador</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section container">
+      <div class="copy-layout">
+        <article class="copy-box reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Script</span>
+          <h2>Código pronto</h2>
+          <p>Esse é o código injetor do Batata Hub V7. O botão abaixo copia o bookmarklet atualizado.</p>
+
+          <div class="script-preview">
+            <div class="shine"></div>
+            <code id="scriptCode">javascript:(()=>{const s=document.createElement('script');s.src='https://extens-o-eclipse-lunar-leiasp.vercel.app/hub.js?t='+Date.now();document.documentElement.appendChild(s);})();</code>
+          </div>
+
+          <div class="copy-actions">
+            <button class="btn btn-primary" type="button" onclick="copyScript()">Copiar script</button>
+            <button class="btn btn-secondary" type="button" onclick="selectScript()">Selecionar texto</button>
+          </div>
+
+          <div class="copy-note">
+            Dica: Adicione essa linha como um favorito na barra do seu navegador para ativar com 1 clique.
+          </div>
+        </article>
+
+        <article class="steps-card reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Como usar</span>
+          <h2>Passo a passo</h2>
+          <p>Como rodar a engine roxa do Batata Hub:</p>
+
+          <div class="steps-list">
+            <div class="step-line">
+              <div class="step-dot">1</div>
+              <div>
+                <h3>Copie o código</h3>
+                <p>Use o botão principal de copiar para salvar o injetor.</p>
+              </div>
+            </div>
+
+            <div class="step-line">
+              <div class="step-dot">2</div>
+              <div>
+                <h3>Abra a página do Quiz</h3>
+                <p>Vá até a tela onde as perguntas e o botão de resposta aparecem.</p>
+              </div>
+            </div>
+
+            <div class="step-line">
+              <div class="step-dot">3</div>
+              <div>
+                <h3>Injete o Hub</h3>
+                <p>Abra o Console (F12), cole o código e dê Enter (ou use o favorito).</p>
+              </div>
+            </div>
+
+            <div class="step-line">
+              <div class="step-dot">4</div>
+              <div>
+                <h3>Configure e Inicie</h3>
+                <p>Ajuste o delay em ms, clique em Initialize Engine e acompanhe os pontos.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="grid grid-2">
+        <article class="feature-card reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Aviso</span>
+          <h3>Contador em Alta Velocidade</h3>
+          <p>Se você colocar um delay muito baixo, a pontuação na interface preta pode bugar ou dessincronizar do servidor, mas os cliques continuam rodando no limite do overclock.</p>
+        </article>
+
+        <article class="feature-card reveal tilt-card">
+          <div class="shine"></div>
+          <span class="section-tag">Suporte</span>
+          <h3>Reportar Bugs</h3>
+          <p>Se o sistema travar ou sumir com a interface flutuante, use o botão de Reset All ou avise a rapaziada direto no dece.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Batata Hub © 2026 • Quiz Engine V7</p>
+  </footer>
+
+  <script>
+    function getScriptText() {
+      return document.getElementById('scriptCode').innerText.trim();
+    }
+
+    // Mantém as mesmas funções injetadas que o seu hub.js precisa
+    function copyScript() {
+      const text = getScriptText();
+      navigator.clipboard.writeText(text).then(() => {
+        if (window.showToast) window.showToast('Script copiado!');
+      }).catch(() => {
+        if (window.showToast) window.showToast('Copie manualmente o texto da caixa.');
+      });
+    }
+
+    function selectScript() {
+      const el = document.getElementById('scriptCode');
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      if (window.showToast) window.showToast('Texto selecionado!');
+    }
+  </script>
+  <script src="assets/js/hub.js"></script>
+</body>
+</html>
