@@ -1,0 +1,24 @@
+BATATA HUB — TEMA ESPACIAL COMPLETO
+
+Este pacote contém o site inteiro, incluindo:
+- 12 páginas com a mesma identidade espacial;
+- catálogo de 2.000 jogos com busca, categorias e player;
+- cinco arquivos .vrblocks de robótica;
+- três tutoriais completos;
+- Redação Maker e Farm Moedas Leia com seus códigos originais.
+
+Extraia os arquivos na raiz do seu projeto, mantendo a estrutura de pastas.
+Publique a pasta como um site estático. Não é necessário executar um build.
+
+As 1.753 adições usam capas locais; as imagens das 247 entradas originais e os
+próprios jogos continuam dependendo dos servidores externos indicados no catálogo. Se um jogo não abrir no player, use Abrir original.
+
+Os efeitos, as fontes e a identidade visual estão em assets/.
+Os efeitos podem ser pausados pelo rodapé.
+
+A lista abre com 60 jogos. Use Mostrar mais jogos para carregar outro bloco.
+A busca e o filtro sempre consultam o catálogo completo de 2.000 títulos.
+
+Esta versão acrescenta 1.000 títulos de catálogos G+ e da coleção Geometry.
+Vibes, Vibes 2 Online, 3D, X-Ball, X-Arrow e Monster estão em destaque.
+Use a categoria Geometry para ver os jogos dessa linha.
