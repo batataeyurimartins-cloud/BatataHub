@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batata Games</title>
+  <meta name="description" content="Batata Games: jogos Desbloqueados para jogar na Escola.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="brand">
+        <span class="brand-icon"></span>
+        <span>Batata Games</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">Hub</a>
+        <a href="../scripts.html">Scripts</a>
+        <a href="../games.html">Games</a>
+        <a href="index.html">Início</a>
+        <a href="jogos.html">Jogos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container reveal hero-home">
+      <div>
+        <div class="hero-pill">Jogos jogáveis • Catálogo • GitHub • Vercel</div>
+
+        <h1>
+          Batata Games do jeito certo: bonito, limpo e feito pra jogar.
+        </h1>
+
+        <p class="hero-text">
+          Reultilizei a Identidade do BatataScripts e Coloquei alguns jogos.
+          Espero funcionarkkj se nn funcionar eu desisto
+        </p>
+
+        <div class="hero-actions">
+          <a href="jogos.html" class="btn btn-primary">Explorar jogos</a>
+          <a href="#destaques" class="btn btn-secondary">Ver destaques</a>
+        </div>
+
+        <div class="hero-panel stats-panel">
+          <div class="hero-stat">
+            <strong id="totalGames">0</strong>
+            <span>Jogos na base</span>
+          </div>
+          <div class="hero-stat">
+            <strong id="featuredGames">0</strong>
+            <span>Destaques</span>
+          </div>
+          <div class="hero-stat">
+            <strong>PC + Mobile</strong>
+            <span>Dependendo do jogo</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side reveal tilt-card">
+        <div class="shine"></div>
+        <span class="mini-chip">Visão rápida</span>
+        <h3>+10 Horas De serviço gastas com sucessokk</h3>
+        <p>
+          Tudo funcionando. O único ponto fraco ainda são os links externos dos jogos,
+          então estética resolveu — independência total ainda não.
+        </p>
+        <div class="quick-list">
+          <div class="quick-item">
+            <span>01</span>
+            <strong>Catálogo com busca</strong>
+          </div>
+          <div class="quick-item">
+            <span>02</span>
+            <strong>Página individual</strong>
+          </div>
+          <div class="quick-item">
+            <span>03</span>
+            <strong>Player com tela cheia</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="destaques" class="section container">
+      <div class="section-head reveal">
+        <span class="section-tag">Destaques</span>
+        <h2>Jogos em destaque</h2>
+        <p>Uma amostra da base. O catálogo completo fica na página de jogos.</p>
+      </div>
+
+      <div class="projects-grid games-grid" data-featured-grid></div>
+    </section>
+
+    <section id="sobre" class="section container">
+      <div class="section-head reveal">
+        <span class="section-tag">Sobre</span>
+        <h2>Batata Scripts Agora também Faz Jogos!!</h2>
+        <p>Agradeço de coração com o pessoal que colaborou com o site, se você encontrar algum bug, Chama lá no sv do dc😉👌.</p>
+      </div>
+
+      <div class="dev-grid info-grid-home">
+        <article class="dev-card reveal accordion tilt-card active">
+          <div class="shine"></div>
+          <button class="accordion-trigger" type="button">
+            <div>
+              <strong>Bugs Corrigidos:</strong>
+              <span>Base mais profissional</span>
+            </div>
+            <b>+</b>
+          </button>
+          <div class="accordion-content">
+            <p>
+              O site agora tem identidade própria, páginas separadas e uma estrutura muito menos frágil do que o modelo original.
+            </p>
+          </div>
+        </article>
+
+        <article class="dev-card reveal accordion tilt-card">
+          <div class="shine"></div>
+          <button class="accordion-trigger" type="button">
+            <div>
+              <strong>Problemas Afetando o Site:</strong>
+              <span>Dependência externa</span>
+            </div>
+            <b>+</b>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Os jogos ainda vêm de links externos. Se um host cair, quebrar iframe ou bloquear acesso, esse jogo para de abrir.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <article class="story-card reveal tilt-card">
+        <div class="shine"></div>
+        <span class="section-tag">Direto ao ponto</span>
+        <h3>Nossa Possivel Correção:</h3>
+        <p>
+          Primeiro lança bonito e funcional. Depois limpa a base, deixa só os jogos bons e, se quiser independência real,
+          começa a hospedar os principais por conta própria. Senão você vai ter um site bonito dependente do servidor dos outros.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Batata Games © 2026 • Jogos jogáveis • Visual inspirado no teu Batata Scripts</p>
+  </footer>
+
+  <script src="js/games.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
