@@ -1,0 +1,27 @@
+BATATA HUB — 10.000 JOGOS
+
+Site completo com tema espacial, 13 páginas, catálogo de 10.000 jogos,
+cinco arquivos VRBlocks e os três tutoriais de robótica.
+Os códigos de Redação Maker e Farm Moedas Leia foram preservados.
+
+O catálogo reúne os 2.000 jogos anteriores e as 8.000 adições do
+Google Sites indicado, dos catálogos G+ e de GameMonetize.
+As fontes e as checagens estão em batataGames/FONTES-DOS-JOGOS.md.
+
+Extraia o ZIP na raiz do seu projeto mantendo a estrutura de pastas.
+Publique como site estático, sem instalação de dependências ou build.
+
+A lista mostra 60 jogos de início. Use Mostrar mais jogos para continuar.
+A busca e os filtros consultam todos os 10.000 títulos.
+Os 200 recomendados abrem a lista. Escolha Recomendados no filtro
+Categoria para ver apenas essa seleção. Os seis destaques misturam
+Geometry Vibes, Smash Karts, Run 3, Basket Random, Moto X3M e Snow Rider 3D.
+Toda a coleção Geometry Vibes está entre os primeiros 60 jogos.
+Os novos jogos Flash e módulos G+ oferecem um botão para iniciar a partida.
+
+As 9.753 adições e 23 jogos da base original têm capas locais. As partidas,
+o player Ruffle e as outras imagens originais usam servidores externos.
+Se uma partida não abrir, tente o link Abrir original.
+
+Os efeitos, as fontes e os estilos compartilhados estão em assets/.
+O rodapé permite pausar os efeitos.
