@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "functions": {
+    "api/batatagpt/chat.js": {
+      "maxDuration": 60,
+      "supportsCancellation": true
+    },
+    "api/batatagpt/health.js": {
+      "maxDuration": 10
+    }
+  }
+}

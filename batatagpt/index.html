@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090910">
+  <meta name="description" content="BatataGPT no Batata Hub: um espaço para explorar ideias, aprender e criar com inteligência artificial.">
+  <title>BatataGPT · Batata Hub</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23131222'/%3E%3Ccircle cx='20' cy='20' r='9' fill='%23b89aff'/%3E%3Cellipse cx='20' cy='20' rx='18' ry='6' transform='rotate(-30 20 20)' fill='none' stroke='%23f4e7d5' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/hub.css">
+  <link rel="stylesheet" href="./chat.css">
+</head>
+<body class="page-chat">
+<a class="skip-link" href="#main">Pular para o chat</a>
+<canvas id="stars" aria-hidden="true"></canvas><div class="cosmic-haze" aria-hidden="true"></div>
+<header class="site-header">
+  <nav class="nav container" aria-label="Navegação principal">
+    <a href="../index.html" class="brand" aria-label="Batata Hub, início"><span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-32 12 12)"/><circle cx="12" cy="12" r="6"/><path d="m18 3 1-2 1 2 2 1-2 1-1 2-1-2-2-1z"/></svg></span><span>batata<span class="brand-light">hub</span><small>SCRIPTS · GAMES · COMUNIDADE</small></span></a>
+    <div class="nav-links"><a href="../index.html">Início</a><a href="../scripts.html">Scripts</a><a href="../games.html">Games</a><a href="./" class="active" aria-current="page">BatataGPT</a></div>
+    <a class="nav-community" href="https://discord.gg/dwq5qMEW" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11a9 9 0 0 1-9 9H3l2-5a9 9 0 1 1 16-4Z"/><path d="M8 10h8m-8 4h5"/></svg><span>Comunidade</span></a>
+  </nav>
+</header>
+<main id="main" class="chat-main container">
+  <div class="chat-page-heading"><div><span class="chat-kicker">03 / ESTAÇÃO DE IDEIAS</span><h1>BatataGPT<span class="chat-beta">BETA</span></h1></div><a class="chat-back" href="../index.html"><span aria-hidden="true">←</span> Voltar ao Hub</a></div>
+  <div class="chat-shell">
+    <aside class="chat-sidebar" aria-label="Suas conversas">
+      <div class="sidebar-intro"><span class="sidebar-orbit" aria-hidden="true">✦</span><div><strong>Seu espaço de criação</strong><span>Ideias em uma nova órbita.</span></div></div>
+      <button id="new" class="new-chat" type="button"><span aria-hidden="true">＋</span> Nova conversa</button>
+      <label class="chat-search" for="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Buscar conversas</span><input id="search" type="search" placeholder="Buscar conversas" autocomplete="off"></label>
+      <div class="history-label">SUAS EXPLORAÇÕES</div>
+      <nav id="history" class="chat-history" aria-label="Histórico de conversas"></nav>
+      <p id="history-empty" class="history-empty">Suas próximas ideias<br>começam por aqui.</p>
+      <div class="sidebar-bottom"><span class="history-note"><i aria-hidden="true"></i> Histórico neste navegador</span><button id="export" type="button"><span aria-hidden="true">↓</span> Exportar conversas</button><button id="about" type="button"><span aria-hidden="true">ⓘ</span> Sobre o BatataGPT</button></div>
+    </aside>
+    <section class="chat-workspace" aria-label="Chat BatataGPT">
+      <header class="chat-toolbar"><div class="conversation-heading"><span class="toolbar-star" aria-hidden="true">✦</span><div><strong id="conversation-title">Uma nova exploração</strong><span>BATATAGPT / CHAT</span></div></div><div class="chat-toolbar-actions"><span id="connection" class="connection" role="status">◌ Conectando</span><button id="new-mobile" type="button" class="icon-button mobile-only" aria-label="Nova conversa">＋</button><button id="history-mobile-button" class="icon-button mobile-only" type="button" aria-label="Mostrar conversas" aria-expanded="false" aria-controls="mobile-history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h12"/></svg></button><button id="about-mobile" class="icon-button" type="button" aria-label="Sobre o BatataGPT">ⓘ</button></div></header>
+      <section id="mobile-history" class="mobile-history" aria-label="Histórico de conversas" hidden><div class="mobile-history-top"><strong>Suas explorações</strong><button id="close-history" class="icon-button" type="button" aria-label="Fechar histórico">×</button></div><label class="chat-search" for="mobile-search"><span class="sr-only">Buscar conversas</span><input id="mobile-search" type="search" placeholder="Buscar conversas" autocomplete="off"></label><div id="mobile-history-list"></div><div class="mobile-history-tools"><button id="export-mobile" type="button">↓ Exportar conversas</button><button id="history-about" type="button">Sobre e ferramentas</button></div></section>
+      <div id="thread" class="chat-thread" tabindex="0" aria-label="Mensagens da conversa">
+        <section id="welcome" class="chat-welcome">
+          <div class="welcome-orbit" aria-hidden="true"><svg viewBox="0 0 120 100" fill="none"><circle cx="60" cy="48" r="24" fill="url(#planet)"/><ellipse cx="60" cy="48" rx="49" ry="15" transform="rotate(-28 60 48)" stroke="#c5a8ee" stroke-width="1.2"/><path d="M76 27c-17-6-31 7-34 20" stroke="#edc2a3" stroke-width="1.2" opacity=".7"/><circle cx="22" cy="70" r="3.5" fill="#efb98f"/><path d="m96 14 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" fill="#bda1ed"/><circle cx="27" cy="17" r="1.5" fill="#f0d4b7"/><defs><linearGradient id="planet" x1="35" y1="23" x2="88" y2="76" gradientUnits="userSpaceOnUse"><stop stop-color="#e8ba9a"/><stop offset=".48" stop-color="#a487cb"/><stop offset="1" stop-color="#453257"/></linearGradient></defs></svg></div>
+          <span class="welcome-eyebrow">O ASSISTENTE DO SEU UNIVERSO</span>
+          <h2>O que vamos<br><span class="gradient-text">explorar hoje?</span></h2>
+          <p>Uma pergunta, uma ideia ou um projeto inteiro.<br>Eu te ajudo a encontrar o próximo passo.</p>
+          <div class="prompt-cards">
+            <button type="button" data-prompt="Me ajude a ter ideias criativas para um projeto pessoal. Primeiro pergunte o que eu gosto de fazer."><span class="prompt-icon" aria-hidden="true">✦</span><strong>Destrave uma ideia</strong><span class="prompt-description">Dê um novo rumo ao seu projeto.</span><span class="prompt-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" data-prompt="Explique o que é inteligência artificial com uma analogia simples e um exemplo."><span class="prompt-icon" aria-hidden="true">⌘</span><strong>Aprenda algo novo</strong><span class="prompt-description">Descomplique o que parece difícil.</span><span class="prompt-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" data-prompt="Me ajude a escrever um texto. Primeiro pergunte o tema, o objetivo e o público."><span class="prompt-icon" aria-hidden="true">✎</span><strong>Encontre as palavras</strong><span class="prompt-description">Transforme uma ideia em texto.</span><span class="prompt-arrow" aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+        <section id="messages" class="chat-messages" aria-live="polite" aria-label="Conversa"></section>
+      </div>
+      <div class="composer-wrap"><div id="status" class="chat-status" role="status">Preparando sua estação de ideias…</div><form id="form" class="chat-composer"><label class="sr-only" for="prompt">Mensagem para o BatataGPT</label><textarea id="prompt" rows="2" maxlength="8000" placeholder="Manda sua ideia para a órbita…"></textarea><div class="composer-bottom"><span class="composer-brand"><span aria-hidden="true">✦</span> BatataGPT <small>DO BATATA HUB</small></span><span class="composer-hint">Enter para enviar</span><button id="stop" class="send-button" type="button" aria-label="Interromper resposta" hidden>■</button><button id="send" class="send-button" type="submit" aria-label="Enviar mensagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button></div></form><p class="chat-footnote">O BatataGPT pode errar. As mensagens são processadas pela Groq.</p></div>
+    </section>
+  </div>
+</main>
+<footer class="chat-page-footer container"><p>Uma nova estação no universo <a href="../index.html">Batata Hub</a>.</p><button type="button" class="motion-toggle" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span>Pausar efeitos</span></button></footer>
+<dialog id="info" class="chat-dialog" aria-labelledby="info-title"><span class="welcome-eyebrow">UMA ESTAÇÃO PARA SUAS IDEIAS</span><h2 id="info-title">Conheça o BatataGPT.</h2><p>Um espaço do Batata Hub para aprender, escrever, programar e explorar caminhos criativos, com um modelo aberto executado pela Groq.</p><p>O trecho recente da conversa é enviado à Groq para gerar a resposta. Seu histórico fica neste navegador; você pode exportá-lo ou apagá-lo. A marca e a personalidade são BatataGPT; o modelo base não foi treinado do zero para este projeto.</p><p>O assistente pode errar e não acessa a web, anexos ou ferramentas nesta versão. Quando a conta atinge o limite de uso, é necessário aguardar a renovação da cota.</p><div class="dialog-tools"><button id="export-dialog" type="button">↓ Exportar conversas</button><button id="clear" type="button">Apagar histórico</button></div><button id="close" class="dialog-close" type="button">Entendi, vamos explorar <span aria-hidden="true">↗</span></button></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="../assets/js/hub.js" defer></script><script type="module" src="./app.js"></script>
+</body>
+</html>
