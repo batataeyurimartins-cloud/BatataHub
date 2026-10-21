@@ -70,17 +70,27 @@ function updateGroups() {
 }
 function renderCategories() {
   const options = [{ key: 'todas', label: 'Todas as coleções' }, ...tabs];
-  $('#categories').replaceChildren(...options.map(tab => {
+  const rail = $('#categories'), previousScroll = rail.scrollLeft;
+  rail.replaceChildren(...options.map(tab => {
     const button = element('button', 'category-button' + (category === tab.key ? ' active' : ''));
     button.type = 'button'; button.setAttribute('aria-pressed', String(category === tab.key));
     button.dataset.category = tab.key;
-    button.append(element('span', '', tab.label), element('small', '', String(groups.filter(group => tab.key === 'todas' || group.category === tab.key).reduce((sum, group) => sum + countPDFs(group.volumes), 0))));
+    const symbol = element('span', 'category-symbol'); symbol.append(icon('book'));
+    const label = element('span', 'category-copy', tab.label);
+    button.append(symbol, label, element('small', '', String(groups.filter(group => tab.key === 'todas' || group.category === tab.key).reduce((sum, group) => sum + countPDFs(group.volumes), 0))));
     button.onclick = () => {
       category = tab.key; updateGroups(); renderCategories(); render();
-      [...$('#categories').children].find(item => item.dataset.category === category)?.focus({ preventScroll: true });
+      [...rail.children].find(item => item.dataset.category === category)?.focus({ preventScroll: true });
     };
     return button;
   }));
+  rail.scrollLeft = previousScroll;
+  const active = [...rail.children].find(item => item.dataset.category === category);
+  if (active && rail.scrollWidth > rail.clientWidth) {
+    const item = active.getBoundingClientRect(), box = rail.getBoundingClientRect();
+    if (item.left < box.left + 8) rail.scrollLeft -= box.left + 8 - item.left;
+    else if (item.right > box.right - 8) rail.scrollLeft += item.right - box.right + 8;
+  }
 }
 function fillGroup(content, group) {
   for (const volume of group.volumes) {
@@ -91,7 +101,9 @@ function fillGroup(content, group) {
       const link = element('a', 'pdf-link');
       link.href = pdf.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
       link.setAttribute('aria-label', `${pdf.label} — ${group.name}${volume.label ? ', ' + volume.label : ''} (PDF, abre em nova aba)`);
-      link.append(element('span', 'file-mark', 'PDF'), element('span', 'pdf-name', pdf.label), icon('external'));
+      const copy = element('span', 'pdf-copy');
+      copy.append(element('span', 'pdf-name', pdf.label), element('span', 'pdf-action', 'Abrir material'));
+      link.append(element('span', 'file-mark', 'PDF'), copy, icon('external'));
       list.append(link);
     }
     section.append(list); content.append(section);
@@ -99,6 +111,7 @@ function fillGroup(content, group) {
 }
 function gradeCard(group, autoOpen) {
   const details = element('details', 'grade-card');
+  details.dataset.category = group.category;
   const summary = element('summary', 'grade-summary');
   const symbol = element('span', 'grade-symbol'); symbol.append(icon('book'));
   const heading = element('span', 'grade-heading'); heading.append(element('span', 'category-label', group.categoryLabel), element('h3', '', group.name));
@@ -123,6 +136,7 @@ function render() {
   $('#result-count').textContent = `${total} ${total === 1 ? 'material encontrado' : 'materiais encontrados'} em ${found.length} ${found.length === 1 ? 'grupo' : 'grupos'}`;
   $('#reset-filters').hidden = category === 'todas' && !query && !groupFilter;
   $('#clear-search').hidden = !query;
+  $('#suggested-searches').hidden = !!query || !!groupFilter || category !== 'todas';
   updateURL();
 }
 function resetFilters() {
@@ -131,6 +145,8 @@ function resetFilters() {
 }
 async function loadCatalog() {
   loaded = false;
+  $('#search').disabled = true; $('#grade').disabled = true;
+  for (const button of document.querySelectorAll('[data-search]')) button.disabled = true;
   $('#load-state').hidden = false;
   $('#load-state').classList.remove('has-error');
   $('#load-state h3').textContent = 'Organizando os livros da estação…';
@@ -144,7 +160,9 @@ async function loadCatalog() {
     if (!tabs.some(tab => tab.key === category)) category = 'todas';
     $('#total-materials').textContent = String(groups.reduce((sum, group) => sum + countPDFs(group.volumes), 0));
     $('#total-categories').textContent = String(tabs.length);
+    $('#total-groups').textContent = String(groups.length);
     $('#search').value = query; $('#search').disabled = false; $('#grade').disabled = false;
+    for (const button of document.querySelectorAll('[data-search]')) button.disabled = false;
     loaded = true; $('#load-state').hidden = true;
     updateGroups(); renderCategories(); render();
   } catch {
@@ -161,4 +179,17 @@ $('#grade').onchange = event => { groupFilter = event.target.value; render(); };
 $('#reset-filters').onclick = resetFilters;
 $('#empty-reset').onclick = resetFilters;
 $('#retry').onclick = loadCatalog;
+for (const button of document.querySelectorAll('[data-search]')) button.onclick = () => {
+  if (!loaded) return;
+  query = button.dataset.search;
+  $('#search').value = query;
+  render();
+  $('#search').focus({ preventScroll: true });
+};
+document.addEventListener('keydown', event => {
+  if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey || !loaded) return;
+  if (event.target instanceof HTMLElement && (event.target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName))) return;
+  event.preventDefault();
+  $('#search').focus();
+});
 loadCatalog();

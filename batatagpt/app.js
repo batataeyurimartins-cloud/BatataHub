@@ -42,7 +42,8 @@ function nearBottom() {
   return thread.scrollHeight - thread.scrollTop - thread.clientHeight < 160;
 }
 function scrollToLatest() {
-  $('#thread').scrollTop = $('#thread').scrollHeight;
+  const thread = $('#thread');
+  thread.scrollTop = $('#welcome').hidden ? thread.scrollHeight : 0;
 }
 function animateMessage(article, className) {
   if (!article || matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('effects-paused')) return;
