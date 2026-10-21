@@ -9,7 +9,7 @@ const output = new URL('./public/', root);
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 const pages = (await readdir(root)).filter(name => name.endsWith('.html'));
-const directories = ['assets', 'batatagpt', 'batataGames', 'scripts'];
+const directories = ['assets', 'batatagpt', 'batataGames', 'scripts', 'apostilas'];
 for (const name of [...pages, ...directories]) {
   await cp(new URL(name, root), new URL(name, output), { recursive: true });
 }

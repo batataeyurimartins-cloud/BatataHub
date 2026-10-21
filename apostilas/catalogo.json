@@ -1,0 +1,1609 @@
+{
+  "source": "https://apostilas.nejizzuki.xyz/",
+  "retrievedAt": "2026-10-21",
+  "tabs": [
+    {
+      "key": "fundamental",
+      "label": "Ensino Fundamental"
+    },
+    {
+      "key": "medio",
+      "label": "Ensino Médio"
+    },
+    {
+      "key": "spacao",
+      "label": "São Paulo em Ação"
+    },
+    {
+      "key": "moderna",
+      "label": "Moderna Plus"
+    },
+    {
+      "key": "emacao",
+      "label": "Moderna em Ação"
+    },
+    {
+      "key": "superacao",
+      "label": "SuperAção"
+    },
+    {
+      "key": "pnld",
+      "label": "Coleções PNLD"
+    },
+    {
+      "key": "goias",
+      "label": "Revisa Goiás"
+    }
+  ],
+  "data": {
+    "fundamental": [
+      {
+        "name": "6º Ano",
+        "count": "10 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/6ano/Livro do estudante Amarelo.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/6ano/Livro do estudante Roxo.pdf",
+                "label": "Ciências, História, Geografia, Inglês e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/6ano/matematicaportugues6anovol2.pdf",
+                "label": "Matemática e Língua Portuguesa"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/6ano/histciefeoinglprojeto6anovol2.pdf",
+                "label": "História, Ciências, Geografia, Inglês e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/6ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/6ano/geografia-historia.pdf",
+                "label": "Geografia e História"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/6ano/ciencias-ingles-projeto-vida.pdf",
+                "label": "Ciências, Língua Inglesa e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/6ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/6ano/historia-geografia.pdf",
+                "label": "História e Geografia"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/6ano/ciencias-ingles.pdf",
+                "label": "Ciências e Língua Inglesa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "7º Ano",
+        "count": "10 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/7aano/1502147.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/7aano/sla2.pdf",
+                "label": "Ciências, História, Geografia, Inglês e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/7ano/histciengeoinglprojeto7anovol2.pdf",
+                "label": "História, Ciências, Geografia, Inglês e Projeto de Vida"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/7ano/matematicaportugues7anovol2.pdf",
+                "label": "Matemática e Língua Portuguesa"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/7ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/7ano/geografia-historia.pdf",
+                "label": "Geografia e História"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/7ano/ciencias-ingles-projeto-vida.pdf",
+                "label": "Ciências, Língua Inglesa e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/7ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/7ano/historia-geografia.pdf",
+                "label": "História e Geografia"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/7ano/ciencias-ingles.pdf",
+                "label": "Ciências e Língua Inglesa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "8º Ano",
+        "count": "10 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/8anno/1502156.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/8anno/sla3.pdf",
+                "label": "Ciências, História, Geografia, Inglês e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/8ano/histciengeoing8anovol2.pdf",
+                "label": "História, Ciências, Geografia e Inglês"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/8ano/matematicaportugues8anovol2.pdf",
+                "label": "Matemática, Língua Portuguesa e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/8ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/8ano/geografia-historia.pdf",
+                "label": "Geografia e História"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/8ano/ciencias-ingles-projeto-vida.pdf",
+                "label": "Ciências, Língua Inglesa e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/8ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/8ano/historia-geografia.pdf",
+                "label": "História e Geografia"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/8ano/ciencias-ingles.pdf",
+                "label": "Ciências e Língua Inglesa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "9º Ano",
+        "count": "10 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/9anno/1502161.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/9anno/sla1.pdf",
+                "label": "Ciências, História, Geografia, Inglês e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/9ano/histciengeoinglprojeto9anovol2.pdf",
+                "label": "História, Ciências, Geografia, Inglês e Projeto de Vida"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/9ano/matematicaportugues9anovol2.pdf",
+                "label": "Matemática e Língua Portuguesa"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/9ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/9ano/geografia-historia.pdf",
+                "label": "Geografia e História"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/9ano/ciencias-ingles-projeto-vida.pdf",
+                "label": "Ciências, Língua Inglesa e Projeto de Vida"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/9ano/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/9ano/historia-geografia.pdf",
+                "label": "História e Geografia"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/9ano/ciencias-ingles.pdf",
+                "label": "Ciências e Língua Inglesa"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "medio": [
+      {
+        "name": "1º Ano EM",
+        "count": "10 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/1anoem/1499971.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/1anoem/1519510.pdf",
+                "label": "Biologia, Física, Química, História, Geografia e Inglês"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/1ano/fisbioloquim1ano2vol.pdf",
+                "label": "Física, Biologia e Química"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/1ano/histgeoingl1anovol2.pdf",
+                "label": "História, Geografia e Inglês"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/1ano/matematica1anovol2.pdf",
+                "label": "Matemática"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/1anoem/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/1anoem/biologia-fisica-quimica.pdf",
+                "label": "Biologia, Física e Química"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/1anoem/historia-geografia-ingles.pdf",
+                "label": "História, Geografia e Língua Inglesa"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/1anoem/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/1anoem/historia-geografia.pdf",
+                "label": "História e Geografia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "2º Ano EM",
+        "count": "11 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/2anoem/1499983.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/2anoem/1520452.pdf",
+                "label": "Biologia, Física, Química, História, Geografia e Inglês"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/2ano/fisbioquim2anovol2.pdf",
+                "label": "Física, Biologia e Química"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/2ano/histgeoing2anovol2.pdf",
+                "label": "História, Geografia e Inglês"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/2ano/1607135%20(1).pdf",
+                "label": "Matemática e Português"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/2anoem/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/2anoem/biologia-fisica-quimica.pdf",
+                "label": "Biologia, Física e Química"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/2anoem/historia-geografia-ingles.pdf",
+                "label": "História, Geografia e Língua Inglesa"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/2anoem/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/2anoem/biologia-fisica-quimica.pdf",
+                "label": "Biologia, Física e Química"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/2anoem/historia-geografia-ingles.pdf",
+                "label": "História, Geografia e Língua Inglesa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "3º Ano EM",
+        "count": "8 apostilas",
+        "volumes": [
+          {
+            "label": "Volume 1",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3anoem/1500111.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3anoem/1520469.pdf",
+                "label": "Biologia, Física, Química, História, Geografia e Inglês"
+              }
+            ]
+          },
+          {
+            "label": "Volume 2",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/3ano/histfisicaingl3anovol2.pdf",
+                "label": "História, Física e Inglês"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/volume2/3ano/matematicaportugues3anovol2.pdf",
+                "label": "Matemática e Português"
+              }
+            ]
+          },
+          {
+            "label": "3º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/3anoem/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/3bim/3anoem/historia-fisica-ingles.pdf",
+                "label": "História, Física e Língua Inglesa"
+              }
+            ]
+          },
+          {
+            "label": "4º Bimestre",
+            "pdfs": [
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/3anoem/portugues-matematica.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://pub-86b80cc84caa480d9ead15da5f556e10.r2.dev/OpenFuture/4bim/3anoem/historia-fisica-ingles.pdf",
+                "label": "História, Física e Língua Inglesa"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "spacao": [
+      {
+        "name": "Volume 1",
+        "count": "2 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/SP1/livromatematica1.pdf",
+                "label": "Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/SP1/livro1.pdf",
+                "label": "Português"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Volume 2",
+        "count": "2 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/SP2/livromatematica2.pdf",
+                "label": "Matemática"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/SP2/livro2.pdf",
+                "label": "Português"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Volume 3",
+        "count": "2 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/SP3/livro3.pdf",
+                "label": "Português"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/SP3/livromatematica3.pdf",
+                "label": "Matemática"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "moderna": [
+      {
+        "name": "Português",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-1-1.pdf",
+                "label": "Volume 1"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-2-1.pdf",
+                "label": "Volume 2"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-3-1.pdf",
+                "label": "Volume 3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Matemática Paiva",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Matematica-Paiva-1-1.pdf",
+                "label": "Volume 1"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Matematica-Paiva-2-1.pdf",
+                "label": "Volume 2"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Matematica-Paiva-3-1.pdf",
+                "label": "Volume 3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Arte",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/MODERNA-PLUS-Arte-1.pdf",
+                "label": "Arte"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Redação",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/MODERNA-PLUS-Redacao-1.pdf",
+                "label": "Redação"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Biologia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Biologia-Amabis-Martho-1.pdf",
+                "label": "Biologia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Educação Digital",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Educacao-Digital-1.pdf",
+                "label": "Educação Digital"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Espanhol",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Espanhol-1.pdf",
+                "label": "Espanhol"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Filosofia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Filosofia-1.pdf",
+                "label": "Filosofia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Física: Ciência e Tecnologia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Fisica-Ciencia-e-Tecnologia-1.pdf",
+                "label": "Física: Ciência e Tecnologia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Geografia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Geografia-1.pdf",
+                "label": "Geografia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "História",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Historia-1.pdf",
+                "label": "História"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Inglês",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Ingles-1.pdf",
+                "label": "Inglês"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Química na Abordagem do Cotidiano",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Quimica-na-abordagem-do-cotidiano-1.pdf",
+                "label": "Química na Abordagem do Cotidiano"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sociologia em Movimento",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaPlus/Moderna-Plus-Sociologia-em-movimento-1.pdf",
+                "label": "Sociologia em Movimento"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "emacao": [
+      {
+        "name": "Matemática",
+        "count": "2 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-em-ACAO-Matematica-1-1.pdf",
+                "label": "Volume 1"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-em-ACAO-Matematica-2-1.pdf",
+                "label": "Volume 2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Português",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-1-1.pdf",
+                "label": "Volume 1"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-2-1.pdf",
+                "label": "Volume 2"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-3-1.pdf",
+                "label": "Volume 3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Artes",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Arte-1.pdf",
+                "label": "Artes"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Inglês",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-em-Acao-Ingles-2.pdf",
+                "label": "Inglês"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Redação",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Redacao-1.pdf",
+                "label": "Redação"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "superacao": [
+      {
+        "name": "Português (Ormundo)",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-1-1.pdf",
+                "label": "Volume 1"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-2-1.pdf",
+                "label": "Volume 2"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-3-1.pdf",
+                "label": "Volume 3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Matemática",
+        "count": "2 apostilas",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperACAO-Matematica-1-1.pdf",
+                "label": "Volume 1"
+              },
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperACAO-Matematica-2-1.pdf",
+                "label": "Volume 2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Biologia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Biologia-1.pdf",
+                "label": "Biologia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Química",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Quimica-2.pdf",
+                "label": "Química"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Artes",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Arte-Ormundo-Vilas-Boas-1.pdf",
+                "label": "Artes"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Redação",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Redacao-Ormundo-Siniscalchi-1.pdf",
+                "label": "Redação"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Espanhol",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Espanhol-1.pdf",
+                "label": "Espanhol"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Filosofia (Cotrim)",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Filosofia-Cotrim-1.pdf",
+                "label": "Filosofia (Cotrim)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Geografia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Geografia-1.pdf",
+                "label": "Geografia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "História",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Historia-1.pdf",
+                "label": "História"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sociologia",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Sociologia-1.pdf",
+                "label": "Sociologia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Educação Física",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": null,
+            "pdfs": [
+              {
+                "href": "https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture/ModernaSuperA%C3%A7%C3%A3o/Moderna-Superacao-Educacao-Fisica-1.pdf",
+                "label": "Educação Física"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pnld": [
+      {
+        "name": "Identidade Saraiva",
+        "count": "19 apostilas",
+        "volumes": [
+          {
+            "label": "Ensino Médio · PNLD 2026",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_PORTUGUES_VOL1_MP.pdf",
+                "label": "Língua Portuguesa · Vol. 1"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_PORTUGUES_VOL2_MP.pdf",
+                "label": "Língua Portuguesa · Vol. 2"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_PORTUGUES_VOL3_MP.pdf",
+                "label": "Língua Portuguesa · Vol. 3"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_Redacao_VU_MP.pdf",
+                "label": "Redação · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_ARTE_VU_MP.pdf",
+                "label": "Arte · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_ARTE_VU_MP_lin.pdf",
+                "label": "Arte · Vol. Único (lin)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_MATEM_1_MP.pdf",
+                "label": "Matemática · Vol. 1"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_MATEM_1_MP-compactado.pdf",
+                "label": "Matemática · Vol. 1 (compactado)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_MATEM_2_MP.pdf",
+                "label": "Matemática · Vol. 2"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_MATEM_2_MP-compactado.pdf",
+                "label": "Matemática · Vol. 2 (compactado)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_MATEM_3_MP.pdf",
+                "label": "Matemática · Vol. 3"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_BIOLOGIA_VU_MP.pdf",
+                "label": "Biologia · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_QUIMICA_VU_MP.pdf",
+                "label": "Química · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_FISICA_VU_MP.pdf",
+                "label": "Física · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20ESPANHOL_SINTESIS_PNLD26_VU_LP.pdf",
+                "label": "Espanhol · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20ESPANHOL_SINTESIS_PNLD26_VU_LP_lin.pdf",
+                "label": "Espanhol · Vol. Único (lin)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_EM_ED_FISICA_VU_MP.pdf",
+                "label": "Educação Física · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_EM_ED_DIGITAL_VU_MP.pdf",
+                "label": "Educação Digital · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20IDENTIDADE_SARAIVA_PNLD26_PROJINTEG_MATEM_VU_MP.pdf",
+                "label": "Projetos Integradores · Matemática"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Do Seu Jeito",
+        "count": "28 apostilas",
+        "volumes": [
+          {
+            "label": "Ensino Médio · PNLD 2026",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_LP_VOL1_MP.pdf",
+                "label": "Língua Portuguesa · Vol. 1"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_LP_VOL2_MP.pdf",
+                "label": "Língua Portuguesa · Vol. 2"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_LP_VOL3_MP.pdf",
+                "label": "Língua Portuguesa · Vol. 3"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_Redacao_VU_MP.pdf",
+                "label": "Redação · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_ARTE_VU_MP.pdf",
+                "label": "Arte · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_ARTE_VU_MP_lin.pdf",
+                "label": "Arte · Vol. Único (lin)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_MATEM_VOL1_MP.pdf",
+                "label": "Matemática · Vol. 1"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_MATEM_VOL2_MP.pdf",
+                "label": "Matemática · Vol. 2"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_MATEM_VOL3_MP.pdf",
+                "label": "Matemática · Vol. 3"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20887999_DOSEUJEITO_Mat_VOL1_PNLD2026_MP_DIV.pdf",
+                "label": "Matemática · Vol. 1 (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888007_DOSEUJEITO_Mat_VOL2_PNLD2026_MP_DIV.pdf",
+                "label": "Matemática · Vol. 2 (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888015_DOSEUJEITO_Mat_VOL3_PNLD2026_MP_DIV.pdf",
+                "label": "Matemática · Vol. 3 (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_BIOLOGIA_VU_MP.pdf",
+                "label": "Biologia · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888280_DOSEUJEITO_Biologia_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Biologia · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_QUIMICA_VU_MP.pdf",
+                "label": "Química · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888047_DOSEUJEITO_Quimica_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Química · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_FISICA_VU_MP.pdf",
+                "label": "Física · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888191_DOSEUJEITO_Fisica_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Física · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_Historia_VU_MP.pdf",
+                "label": "História · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888031_DOSEUJEITO_Historia_VU_PNLD2026_MP_DIV.pdf",
+                "label": "História · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_GEO_VU_PR.pdf",
+                "label": "Geografia · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888023_DOSEUJEITO_Geografia_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Geografia · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_Filosofia_VU_MP.pdf",
+                "label": "Filosofia · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888039_DOSEUJEITO_Filosofia_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Filosofia · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_SOCIOLOGIA_VU_MP.pdf",
+                "label": "Sociologia · Vol. Único"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888320_DOSEUJEITO_Sociologia_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Sociologia · Vol. Único (DIV)"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20DOSEUJEITO_PNLD26_CIE_HUMANAS_VU_MP.pdf",
+                "label": "Projetos Integradores · Ciências Humanas"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/ensino_medio/%5Bensino_medio%5D%20888312_DOSEUJEITO_PI_Ciencias_Hum_VU_PNLD2026_MP_DIV.pdf",
+                "label": "Projetos Integradores · Ciências Humanas (DIV)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Literatura Infantil · PNLD 2026",
+        "count": "15 apostilas",
+        "volumes": [
+          {
+            "label": "Educação Infantil",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20PIGMENTO_ASSIM_OU_ASSADO_PNLD2026_mkt.pdf",
+                "label": "Assim ou Assado?"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20TODAS_AS_LETRAS_BENEDITO_PNLD2026_mkt.pdf",
+                "label": "Benedito"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20JOAQUIM_DIA_E_NOITE_PNLD2026_mkt.pdf",
+                "label": "Dia e Noite"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SINVISA_INCRIVEL_EU_PNLD2026_mkt.pdf",
+                "label": "Incível Eu"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SARAIVA_O_CARACOL_VIAJANTE_PNLD2026_mkt.pdf",
+                "label": "O Caracol Viajante"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20ELIGIS_O_GATO_E_O_MINIGATO_PNLD2026_mkt.pdf",
+                "label": "O Gato e o Minigato"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SB_O_MENINO_E_O_MURO_PNLD2026_mkt.pdf",
+                "label": "O Menino e o Muro"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SCIPIONE_O_RELOGIO_PNLD2026_mkt.pdf",
+                "label": "O Relógio"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20ATICA_A_ARARA_E_O_GUARANA_PNLD2026_mkt.pdf",
+                "label": "A Arara e o Guaraná"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SGE_A_ARVORE_DE_TAMOROMU_PNLD2026_mkt.pdf",
+                "label": "A Árvore de Tamoromu"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SB_A_BOLA_PNLD2026_mkt.pdf",
+                "label": "A Bola"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20TODAS_AS_LETRAS_A_CARTA_PNLD2026_mkt.pdf",
+                "label": "A Carta"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SARAIVA_SOLUCOES_BIBI_VAI_PARA_A_ESCOLA_PNLD2026_mkt.pdf",
+                "label": "Bibi Vai para a Escola"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20RED_BALLOON_O_GATO_E_O_NOVELO_DE_LA_PNLD2026_Marketing.pdf",
+                "label": "O Gato e o Novelo de Lã"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/educacao_infantil/%5Beducacao_infantil%5D%20SARAIVA_O_PAVAO_DO_ABRE_E_FECHA_PNLD2026_mkt.pdf",
+                "label": "O Pavão do Abre e Fecha"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Apis Mais · Produção de Texto",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Anos Iniciais · PNLD 2027",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_iniciais/%5Banos_iniciais%5D%20PNLD27_APIS_MAIS_COL1_PROD_TEXTO_VU_MP_lin.pdf",
+                "label": "Produção de Texto · Vol. Único"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sabidinhos Saraiva",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Anos Iniciais · PNLD 2027",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_iniciais/%5Banos_iniciais%5D%20PNLD27_SABIDINHOS_COL3_PRODTEXTO_VU_MP_lin.pdf",
+                "label": "Produção de Texto · 3º ao 5º ano"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Geografia e História Regionalizadas",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": "Anos Iniciais · PNLD 2027",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_iniciais/%5Banos_iniciais%5D%20PNLD27_REGIONAIS_ATICA_NORDESTE_MP_lin.pdf",
+                "label": "Nordeste Plural"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_iniciais/%5Banos_iniciais%5D%20PNLD27_REGIONAIS_ATICA_SUDESTE_MP_lin.pdf",
+                "label": "Sudeste Plural"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_iniciais/%5Banos_iniciais%5D%20PNLD27_REGIONAIS_ATICA_SUL_MP_lin.pdf",
+                "label": "Sul Plural"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Objetos de Leitura · PNLD 2024",
+        "count": "12 apostilas",
+        "volumes": [
+          {
+            "label": "Anos Finais · Literatura",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-eu-passarinho.pdf",
+                "label": "Eu, Passarinho"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-o-vampiro-que-descobriu-o-Brasil.pdf.pdf",
+                "label": "O Vampiro que Descobriu o Brasil"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-Isso-ninguem-me-tira.pdf",
+                "label": "Isso Ninguém me Tira"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-a-escrava-isaura.pdf",
+                "label": "A Escrava Isaura"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-mano-descobre-a-solidariedade.pdf",
+                "label": "Mano Descobre a Solidariedade"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-a-chave-do-corsario.pdf",
+                "label": "A Chave do Corsário"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-longe-como-o-meu-querer.pdf",
+                "label": "Longe como o Meu Querer"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-o-lago-do-silencio.pdf",
+                "label": "O Lago do Silêncio"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-procura-se-um-planeta-sustentavel.pdf",
+                "label": "Procura-se um Planeta Sustentável"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-a-flauta-magica.pdf",
+                "label": "A Flauta Mágica"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-ninguem-sabe-o-que-e-um-poema.pdf",
+                "label": "Ninguém Sabe o que é um Poema"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/anos_finais/%5Banos_finais%5D%20pnld-2024-objeto-3-o-segredo-das-trancas.pdf",
+                "label": "O Segredo das Tranças e outras Histórias Africanas"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "EJA · Práticas",
+        "count": "2 apostilas",
+        "volumes": [
+          {
+            "label": "Educação de Jovens e Adultos",
+            "pdfs": [
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/eja/%5Beja%5D%20praticas-do-mundo-do-trabalho-e-territorios.pdf",
+                "label": "Práticas do Mundo do Trabalho e Territórios"
+              },
+              {
+                "href": "https://edocente.nejizzuki.xyz/apostilas/eja/%5Beja%5D%20Praticas%20em%20Linguagem%20e%20cultura%20digital.pdf",
+                "label": "Práticas em Linguagem e Cultura Digital"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "goias": [
+      {
+        "name": "6º Ano",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Caderno do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/6ano-LP-estudante.pdf",
+                "label": "Língua Portuguesa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "7º Ano",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Caderno do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/7ano-LP-MAT-estudante.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "8º Ano",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Caderno do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/8ano-LP-MAT-estudante.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "9º Ano",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": "Cadernos do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/9ano-LP-MAT-estudante.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/9ano-CIENCIAS-NATUREZA-estudante.pdf",
+                "label": "Ciências da Natureza"
+              },
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/9ano-CIENCIAS-HUMANAS-estudante.pdf",
+                "label": "Ciências Humanas"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "1ª Série EM",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Caderno do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/1serie-LP-MAT-estudante.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "2ª Série EM",
+        "count": "1 apostila",
+        "volumes": [
+          {
+            "label": "Caderno do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/2serie-LP-MAT-estudante.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "3ª Série EM",
+        "count": "3 apostilas",
+        "volumes": [
+          {
+            "label": "Cadernos do estudante",
+            "pdfs": [
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/3serie-LP-MAT-estudante.pdf",
+                "label": "Língua Portuguesa e Matemática"
+              },
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/3serie-CIENCIAS-NATUREZA-estudante.pdf",
+                "label": "Ciências da Natureza"
+              },
+              {
+                "href": "https://apostilas.openfuture.lol/pdf/3serie-CIENCIAS-HUMANAS-estudante.pdf",
+                "label": "Ciências Humanas"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
