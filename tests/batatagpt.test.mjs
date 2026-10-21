@@ -52,12 +52,8 @@ test('route entry points use the supported native Web handler and preserve stati
   const config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url)));
   assert.equal(config.framework, null);
   assert.equal(config.rewrites, undefined);
-  for (const path of ['/server/batatagpt.mjs', '/tests/batatagpt.test.mjs', '/README-Batatagpt.md']) {
-    assert.ok(config.routes.some(route => new RegExp(route.src).test(path) && route.status === 404));
-  }
-  for (const path of ['/', '/batatagpt/', '/api/batatagpt/chat', '/games.html', '/scripts/batatarobotica/index.html']) {
-    assert.ok(!config.routes.some(route => new RegExp(route.src).test(path)));
-  }
+  assert.equal(config.routes, undefined);
+  assert.equal(config.outputDirectory, 'public');
   assert.equal(config.functions['api/batatagpt/chat.js'].supportsCancellation, true);
   assert.equal(config.functions['api/batatagpt/chat.js'].maxDuration, 60);
   await Promise.all(['index.html', 'games.html', 'scripts.html', 'redacao-maker.html', 'farm-moedas-leia.html'].map(path => access(new URL('../' + path, import.meta.url))));

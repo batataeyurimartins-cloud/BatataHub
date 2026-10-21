@@ -18,7 +18,7 @@ Se o deploy já tiver sido criado antes de salvar ou alterar a variável, faça 
 
 Opcionalmente, configure `GROQ_MODEL` com um modelo de texto disponível na sua conta Groq. O padrão é `openai/gpt-oss-20b`. Os modelos GPT OSS usam `reasoning_effort: low`, sem devolver raciocínio interno, e limite de 2.048 tokens de conclusão. A conta Groq pode ter cotas menores ou diferentes; o app não promete uso ilimitado.
 
-O projeto mantém os arquivos HTML existentes e adiciona funções Node.js 24 em `api/batatagpt/`. Não há etapa de build do frontend nem redirecionamento geral que substitua as páginas do Hub. O chat tem duração máxima de 60 segundos na Vercel, com timeout interno de 55 segundos e cancelamento quando o visitante interrompe a resposta.
+O projeto mantém os arquivos HTML existentes e adiciona funções Node.js 24 em `api/batatagpt/`. `npm run build` prepara somente as páginas e os diretórios `assets`, `batatagpt`, `batataGames` e `scripts` em `public/`, a pasta servida pelo CDN. O código do servidor, testes e configuração ficam fora dessa saída, disponíveis ao empacotador das funções. Não há redirecionamento geral que substitua as páginas do Hub. O chat tem duração máxima de 60 segundos na Vercel, com timeout interno de 55 segundos e cancelamento quando o visitante interrompe a resposta.
 
 ## Contrato da API
 

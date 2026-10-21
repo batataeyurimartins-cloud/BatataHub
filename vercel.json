@@ -1,10 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "routes": [
-    { "src": "^/(?:server|tests)(?:/.*)?$", "status": 404 },
-    { "src": "^/README-Batatagpt\\.md$", "status": 404 }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "functions": {
     "api/batatagpt/chat.js": {
       "maxDuration": 60,
