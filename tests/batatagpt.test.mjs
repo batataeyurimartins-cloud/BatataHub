@@ -32,7 +32,7 @@ function decodeEvents(text) {
 
 test('health reports configuration honestly and never returns credentials or the raw model', async () => {
   const req = new Request('https://batata-hub.vercel.app/api/batatagpt/health');
-  assert.deepEqual(await handleHealth(req, {}).json(), { configured: false, mode: 'online', provider: 'groq', model: 'batatagpt' });
+  assert.deepEqual(await handleHealth(req, {}).json(), { configured: false, name: 'BatataGPT' });
   assert.equal((await handleHealth(req, { GROQ_API_KEY: '  ' }).json()).configured, false);
   const configured = handleHealth(req, { ...env, GROQ_MODEL: 'private-model-name' });
   assert.equal(configured.headers.get('cache-control'), 'no-store');
@@ -40,6 +40,7 @@ test('health reports configuration honestly and never returns credentials or the
   assert.equal(JSON.parse(text).configured, true);
   assert.ok(!text.includes(env.GROQ_API_KEY));
   assert.ok(!text.includes('private-model-name'));
+  assert.doesNotMatch(text, /groq|provider|gpt-oss/i);
   assert.equal(await handleHealth(new Request(req, { method: 'HEAD' }), env).text(), '');
   assert.equal(handleHealth(new Request(req, { method: 'POST' }), env).status, 405);
 });
@@ -51,7 +52,12 @@ test('route entry points use the supported native Web handler and preserve stati
   const config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url)));
   assert.equal(config.framework, null);
   assert.equal(config.rewrites, undefined);
-  assert.equal(config.routes, undefined);
+  for (const path of ['/server/batatagpt.mjs', '/tests/batatagpt.test.mjs', '/README-Batatagpt.md']) {
+    assert.ok(config.routes.some(route => new RegExp(route.src).test(path) && route.status === 404));
+  }
+  for (const path of ['/', '/batatagpt/', '/api/batatagpt/chat', '/games.html', '/scripts/batatarobotica/index.html']) {
+    assert.ok(!config.routes.some(route => new RegExp(route.src).test(path)));
+  }
   assert.equal(config.functions['api/batatagpt/chat.js'].supportsCancellation, true);
   assert.equal(config.functions['api/batatagpt/chat.js'].maxDuration, 60);
   await Promise.all(['index.html', 'games.html', 'scripts.html', 'redacao-maker.html', 'farm-moedas-leia.html'].map(path => access(new URL('../' + path, import.meta.url))));

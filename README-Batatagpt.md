@@ -2,6 +2,8 @@
 
 O chat fica em `/batatagpt/`. Ele usa a API do próprio BatataHub para conversar com um modelo aberto executado pela Groq. Não há download de modelo nem cadastro para o visitante. A marca e a aplicação são BatataGPT; o modelo base não foi treinado do zero pelo projeto.
 
+A interface e as respostas de metadados da API exibem somente a identidade BatataGPT. Os caminhos HTTP de código do servidor, testes e deste guia retornam 404. Este repositório é público: o código e seu histórico continuam permitindo identificar a integração; remover nomes do site não torna a implementação confidencial.
+
 ## Ativar na Vercel
 
 Antes de publicar, abra o projeto **batata-hub → Settings → Environment Variables** e adicione:
@@ -23,7 +25,7 @@ O projeto mantém os arquivos HTML existentes e adiciona funções Node.js 24 em
 `GET /api/batatagpt/health` responde JSON sem cache:
 
 ```json
-{"configured":true,"mode":"online","provider":"groq","model":"batatagpt"}
+{"configured":true,"name":"BatataGPT"}
 ```
 
 `configured` informa somente se a configuração está presente; não testa a validade da chave nem a cota do provedor. Sem chave, o valor é `false`, e o chat retorna HTTP 503 com uma mensagem de indisponibilidade para o visitante.

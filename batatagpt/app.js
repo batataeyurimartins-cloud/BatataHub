@@ -44,9 +44,13 @@ function nearBottom() {
 function scrollToLatest() {
   $('#thread').scrollTop = $('#thread').scrollHeight;
 }
-function bubble(role, text, { pending = false } = {}) {
+function bubble(role, text, { pending = false, animate = false } = {}) {
   const article = document.createElement('article');
   article.className = `message ${role}`;
+  if (animate) {
+    article.classList.add('message-enter');
+    article.addEventListener('animationend', () => article.classList.remove('message-enter'), { once: true });
+  }
   const who = document.createElement('span');
   who.className = 'who';
   if (role === 'assistant') {
@@ -151,6 +155,8 @@ function exportChats() {
 }
 function setBusy(next) {
   busy = next;
+  $('.chat-shell').classList.toggle('is-responding', next);
+  $('#messages').setAttribute('aria-busy', String(next));
   $('#send').hidden = next; $('#stop').hidden = !next;
   $('#new').disabled = next; $('#new-mobile').disabled = next; $('#clear').disabled = next || !chats.length;
   for (const button of document.querySelectorAll('[data-prompt]')) button.disabled = next;
@@ -201,7 +207,8 @@ $('#form').onsubmit = async event => {
   }
   chat.messages.push({ role: 'user', content: text });
   persist(); $('#prompt').value = ''; resizePrompt(); renderMessages(); renderHistory();
-  const output = bubble('assistant', 'Preparando resposta…', { pending: true });
+  $('#messages').lastElementChild?.classList.add('message-enter');
+  const output = bubble('assistant', 'Preparando resposta…', { pending: true, animate: true });
   const renderer = createStreamingMarkdownRenderer(output);
   scrollToLatest();
   let answer = '', errorMessage = '', scrollFrame;
