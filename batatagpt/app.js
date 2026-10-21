@@ -44,13 +44,34 @@ function nearBottom() {
 function scrollToLatest() {
   $('#thread').scrollTop = $('#thread').scrollHeight;
 }
-function bubble(role, text, { pending = false, animate = false } = {}) {
+function animateMessage(article, className) {
+  if (!article || matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('effects-paused')) return;
+  const animationName = { 'message-sending': 'chat-message-send', 'message-receiving': 'chat-message-receive', 'message-received': 'chat-message-complete' }[className];
+  const cleanup = () => {
+    article.classList.remove(className);
+    article.removeEventListener('animationend', onEnd);
+    clearTimeout(timer);
+  };
+  const onEnd = event => { if (event.animationName === animationName && !event.pseudoElement) cleanup(); };
+  article.classList.add(className);
+  article.addEventListener('animationend', onEnd);
+  const timer = setTimeout(cleanup, 900);
+}
+function addCopyButton(article, text) {
+  const copy = document.createElement('button');
+  copy.type = 'button'; copy.className = 'copy-answer'; copy.textContent = 'Copiar resposta';
+  copy.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      copy.textContent = '✓ Copiado';
+      setTimeout(() => { copy.textContent = 'Copiar resposta'; }, 2000);
+    } catch { status('Selecione o texto da resposta para copiar.'); }
+  };
+  article.append(copy);
+}
+function bubble(role, text, { pending = false } = {}) {
   const article = document.createElement('article');
   article.className = `message ${role}`;
-  if (animate) {
-    article.classList.add('message-enter');
-    article.addEventListener('animationend', () => article.classList.remove('message-enter'), { once: true });
-  }
   const who = document.createElement('span');
   who.className = 'who';
   if (role === 'assistant') {
@@ -58,21 +79,16 @@ function bubble(role, text, { pending = false, animate = false } = {}) {
     who.append(star, 'BATATAGPT');
   } else who.textContent = 'VOCÊ';
   const content = document.createElement('div'); content.className = 'message-content';
-  if (role === 'assistant') renderMarkdown(content, text);
+  if (pending) {
+    const waiting = document.createElement('span'); waiting.className = 'reply-waiting';
+    const dots = document.createElement('span'); dots.className = 'typing-dots'; dots.setAttribute('aria-hidden', 'true');
+    dots.append(...Array.from({ length: 3 }, () => document.createElement('i')));
+    const label = document.createElement('span'); label.textContent = 'Preparando resposta';
+    waiting.append(dots, label); content.append(waiting);
+  } else if (role === 'assistant') renderMarkdown(content, text);
   else content.textContent = text;
   article.append(who, content);
-  if (role === 'assistant' && text && !pending) {
-    const copy = document.createElement('button');
-    copy.type = 'button'; copy.className = 'copy-answer'; copy.textContent = 'Copiar resposta';
-    copy.onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(text);
-        copy.textContent = '✓ Copiado';
-        setTimeout(() => { copy.textContent = 'Copiar resposta'; }, 2000);
-      } catch { status('Selecione o texto da resposta para copiar.'); }
-    };
-    article.append(copy);
-  }
+  if (role === 'assistant' && text && !pending) addCopyButton(article, text);
   $('#messages').append(article);
   return content;
 }
@@ -207,8 +223,9 @@ $('#form').onsubmit = async event => {
   }
   chat.messages.push({ role: 'user', content: text });
   persist(); $('#prompt').value = ''; resizePrompt(); renderMessages(); renderHistory();
-  $('#messages').lastElementChild?.classList.add('message-enter');
-  const output = bubble('assistant', 'Preparando resposta…', { pending: true, animate: true });
+  animateMessage($('#messages').lastElementChild, 'message-sending');
+  const output = bubble('assistant', '', { pending: true });
+  const replyArticle = output.closest('.message');
   const renderer = createStreamingMarkdownRenderer(output);
   scrollToLatest();
   let answer = '', errorMessage = '', scrollFrame;
@@ -217,7 +234,12 @@ $('#form').onsubmit = async event => {
   status('BatataGPT está explorando sua ideia…'); connection('◉ Respondendo', 'busy');
   try {
     for await (const chunk of cloudReply(contextFor(chat.messages), controller.signal)) {
+      if (!chunk) continue;
       const follow = nearBottom();
+      if (!answer) {
+        replyArticle.classList.add('message-streaming');
+        animateMessage(replyArticle, 'message-receiving');
+      }
       answer += chunk; renderer.update(answer);
       if (follow && !scrollFrame) scrollFrame = requestAnimationFrame(() => { scrollFrame = null; scrollToLatest(); });
     }
@@ -231,13 +253,20 @@ $('#form').onsubmit = async event => {
     if (scrollFrame) cancelAnimationFrame(scrollFrame);
     const follow = nearBottom();
     renderer.flush(answer);
-    if (answer.trim()) chat.messages.push({ role: 'assistant', content: answer });
+    replyArticle.classList.remove('message-streaming');
+    if (answer.trim()) {
+      chat.messages.push({ role: 'assistant', content: answer });
+      addCopyButton(replyArticle, answer);
+      if (!errorMessage) animateMessage(replyArticle, 'message-received');
+    }
     else {
       chat.messages.pop();
       if (!chat.messages.length) { chats = chats.filter(item => item.id !== chat.id); current = null; }
       if (!$('#prompt').value.trim()) { $('#prompt').value = text; resizePrompt(); }
     }
-    persist(); setBusy(false); controller = null; renderMessages(); renderHistory();
+    persist(); setBusy(false); controller = null;
+    if (!answer.trim()) renderMessages();
+    renderHistory();
     if (follow) scrollToLatest();
     status(errorMessage || 'Pronto para a próxima ideia.', !!errorMessage);
     connection(errorMessage ? (available ? '● IA online' : '◌ Indisponível') : '● IA online', available ? 'ready' : 'unavailable');
