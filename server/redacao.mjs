@@ -111,12 +111,14 @@ function safeRetryAfter(value) {
   return /^\d+$/.test(value || '') && Number(value) >= 1 && Number(value) <= 3600 ? value : null;
 }
 
-export async function handleGenerate(request, env = {}, dependencies = {}) {
+// Both routes share generation and quotas. Only the dedicated bookmarklet
+// wrapper can select the public-origin policy; request payloads cannot do so.
+async function generate(request, env, dependencies, { allowCrossOrigin }) {
   if (request.method !== 'POST') return failure(405, 'Use POST para gerar uma redação.', { Allow: 'POST' });
-  // The popup calls from the Hub itself; private pages communicate with the
-  // popup, not directly with this endpoint. No cross-origin API access.
+  // The Hub workspace retains a same-origin API. The separately exported
+  // bookmarklet route deliberately supports requests from private websites.
   const origin = request.headers.get('Origin');
-  if ((origin && origin !== new URL(request.url).origin) || request.headers.get('Sec-Fetch-Site') === 'cross-site') {
+  if (!allowCrossOrigin && ((origin && origin !== new URL(request.url).origin) || request.headers.get('Sec-Fetch-Site') === 'cross-site')) {
     return failure(403, 'Origem não autorizada. Abra o Redação Maker pelo BatataHub.');
   }
   if (request.headers.get('Content-Type')?.split(';')[0].trim().toLowerCase() !== 'application/json') {
@@ -206,4 +208,56 @@ export async function handleGenerate(request, env = {}, dependencies = {}) {
     cleanup();
     abort.abort();
   }
+}
+
+export async function handleGenerate(request, env = {}, dependencies = {}) {
+  return generate(request, env, dependencies, { allowCrossOrigin: false });
+}
+
+function validPublicOrigin(value) {
+  if (value === null) return true; // Non-browser clients have no CORS handshake.
+  try {
+    const url = new URL(value);
+    // An Origin is a serialized HTTP(S) origin, never a URL with credentials,
+    // path, query, fragment, an opaque "null" value or a list of origins.
+    return (url.protocol === 'http:' || url.protocol === 'https:') && url.origin === value;
+  } catch { return false; }
+}
+
+function publicCors(response, origin) {
+  if (origin === null) return response;
+  const headers = new Headers(response.headers);
+  headers.set('Access-Control-Allow-Origin', origin);
+  headers.set('Vary', 'Origin');
+  // Deliberately omit Access-Control-Allow-Credentials. This public service
+  // neither reads cookies nor uses the private website's authenticated session.
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
+export async function handleBookmarkletGenerate(request, env = {}, dependencies = {}) {
+  const origin = request.headers.get('Origin');
+  if (!validPublicOrigin(origin)) return failure(403, 'A origem da página não é compatível com o Redação Maker.');
+  const respond = response => publicCors(response, origin);
+  if (request.method === 'OPTIONS') {
+    const method = request.headers.get('Access-Control-Request-Method');
+    const requestedHeaders = request.headers.get('Access-Control-Request-Headers');
+    const allowedHeaders = requestedHeaders === null || requestedHeaders.split(',').every(value => value.trim().toLowerCase() === 'content-type');
+    if (method !== 'POST' || !allowedHeaders) {
+      return respond(failure(403, 'A requisição deve usar POST com conteúdo JSON.'));
+    }
+    return respond(new Response(null, {
+      status: 204,
+      headers: {
+        ...BASE_HEADERS,
+        Allow: 'POST, OPTIONS',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Max-Age': '600',
+      },
+    }));
+  }
+  if (request.method !== 'POST') {
+    return respond(failure(405, 'Use POST para gerar uma redação.', { Allow: 'POST, OPTIONS' }));
+  }
+  return respond(await generate(request, env, dependencies, { allowCrossOrigin: true }));
 }

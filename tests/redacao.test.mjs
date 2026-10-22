@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import generateRoute from '../api/redacao/generate.js';
-import { handleGenerate } from '../server/redacao.mjs';
+import bookmarkletRoute from '../api/redacao/bookmarklet.js';
+import { handleGenerate, handleBookmarkletGenerate } from '../server/redacao.mjs';
 import { createRateLimiter } from '../server/batatagpt.mjs';
 
 const env = { GROQ_API_KEY: 'test-server-only-secret', VERCEL: '1' };
@@ -297,4 +298,157 @@ test('failed connections release concurrency and keep exceptions out of response
   assert.equal(response.status, 502);
   assert.doesNotMatch((await response.text()) + logs.join('\n'), /test-server-only-secret/);
   assert.equal((await handleGenerate(request(), env, dependencies({ limiter }))).status, 200);
+});
+
+function publicRequest(body = payload, options = {}) {
+  return request(body, {
+    ...options,
+    headers: { Origin: 'https://private-school.example', 'Sec-Fetch-Site': 'cross-site', ...options.headers },
+  });
+}
+
+function preflight(options = {}) {
+  return new Request('https://batata-hub.vercel.app/api/redacao/bookmarklet', {
+    method: 'OPTIONS',
+    ...options,
+    headers: {
+      Origin: 'https://private-school.example',
+      'Access-Control-Request-Method': 'POST',
+      'Access-Control-Request-Headers': 'content-type',
+      ...options.headers,
+    },
+  });
+}
+
+function assertPublicCors(response, origin = 'https://private-school.example') {
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), origin);
+  assert.equal(response.headers.get('Access-Control-Allow-Credentials'), null);
+  assert.equal(response.headers.get('Vary'), 'Origin');
+  assert.equal(response.headers.get('Cache-Control'), 'no-store');
+}
+
+test('bookmarklet native route accepts a credential-free JSON preflight without configuration or inference', async () => {
+  assert.equal(typeof bookmarkletRoute.fetch, 'function');
+  const native = await bookmarkletRoute.fetch(preflight());
+  assert.equal(native.status, 204);
+  assertPublicCors(native);
+  assert.equal(native.headers.get('Access-Control-Allow-Methods'), 'POST, OPTIONS');
+  assert.equal(native.headers.get('Access-Control-Allow-Headers'), 'Content-Type');
+  assert.equal(native.headers.get('Access-Control-Max-Age'), '600');
+  assert.equal(await native.text(), '');
+  let calls = 0;
+  const response = await handleBookmarkletGenerate(preflight(), {}, {
+    limiter: { acquire() { calls++; throw new Error(); } },
+    fetch() { calls++; throw new Error(); },
+  });
+  assert.equal(response.status, 204);
+  assert.equal(calls, 0);
+});
+
+test('bookmarklet public policy accepts unknown HTTP(S) sites while generate keeps its same-origin checks', async () => {
+  for (const origin of ['https://private-school.example', 'http://localhost:8080', 'https://school.example:8443', 'https://[2001:db8::1]']) {
+    const req = publicRequest(payload, { headers: { Origin: origin } });
+    const response = await handleBookmarkletGenerate(req, env, dependencies());
+    assert.equal(response.status, 200);
+    assertPublicCors(response, origin);
+    assert.deepEqual(await response.json(), { ...draft, level: 'medio' });
+    assert.equal((await handleGenerate(publicRequest(payload, { headers: { Origin: origin } }), env, dependencies())).status, 403);
+  }
+});
+
+test('bookmarklet rejects opaque, malformed and non-origin URLs without granting CORS or calling inference', async () => {
+  let calls = 0;
+  const deps = dependencies({ fetch() { calls++; throw new Error(); } });
+  for (const origin of [
+    'null', '', 'garbage', 'ftp://private.example', 'file://', 'javascript:alert(1)',
+    'https://user:password@private.example', 'https://private.example/',
+    'https://private.example/path', 'https://private.example?token=1',
+    'https://private.example#fragment', 'https://a.example https://b.example',
+  ]) {
+    for (const req of [publicRequest(payload, { headers: { Origin: origin } }), preflight({ headers: { Origin: origin } })]) {
+      const response = await handleBookmarkletGenerate(req, env, deps);
+      assert.equal(response.status, 403);
+      assert.equal(response.headers.get('Access-Control-Allow-Origin'), null);
+      assert.doesNotMatch(await response.text(), /password|token=1|groq|gpt-oss/i);
+    }
+  }
+  assert.equal(calls, 0);
+});
+
+test('bookmarklet preflight allows only POST and Content-Type and unsupported actual methods remain readable', async () => {
+  for (const headers of [
+    { 'Access-Control-Request-Method': 'DELETE' },
+    { 'Access-Control-Request-Method': 'GET' },
+    { 'Access-Control-Request-Headers': 'authorization' },
+    { 'Access-Control-Request-Headers': 'content-type, x-api-key' },
+    { 'Access-Control-Request-Headers': 'cookie' },
+    { 'Access-Control-Request-Headers': 'content-type,' },
+  ]) {
+    const response = await handleBookmarkletGenerate(preflight({ headers }), env, dependencies());
+    assert.equal(response.status, 403);
+    assertPublicCors(response);
+    assert.equal(response.headers.get('Access-Control-Allow-Methods'), null);
+  }
+  for (const method of ['GET', 'HEAD', 'DELETE']) {
+    const req = new Request('https://batata-hub.vercel.app/api/redacao/bookmarklet', { method, headers: { Origin: 'https://private-school.example' } });
+    const response = await handleBookmarkletGenerate(req, env, dependencies());
+    assert.equal(response.status, 405);
+    assert.equal(response.headers.get('Allow'), 'POST, OPTIONS');
+    assertPublicCors(response);
+  }
+});
+
+test('bookmarklet validation, availability, rate and upstream errors all preserve CORS without exposing internals', async () => {
+  const cases = [
+    [publicRequest({ ...payload, context: 'short' }), env, dependencies(), 400],
+    [publicRequest(payload, { headers: { 'Content-Length': '98305' } }), env, dependencies(), 413],
+    [publicRequest(payload, { headers: { 'Content-Type': 'text/plain' } }), env, dependencies(), 415],
+    [publicRequest(), {}, dependencies(), 503],
+    [publicRequest(), env, dependencies({ limiter: { acquire() { return { retryAfter: 15 }; } } }), 429],
+    [publicRequest(), env, dependencies({ fetch() { throw new Error(env.GROQ_API_KEY); } }), 502],
+    [publicRequest(), env, dependencies({ fetch: async () => upstream({ title: draft.title, essay: 'incomplete' }) }), 502],
+    [publicRequest(), env, dependencies({ fetch: async () => new Response(env.GROQ_API_KEY, { status: 429, headers: { 'Retry-After': '20' } }) }), 429],
+    [publicRequest(), env, dependencies({ timeoutMs: 5, fetch: async () => new Promise(() => {}) }), 504],
+  ];
+  for (const [req, configuration, deps, status] of cases) {
+    const response = await handleBookmarkletGenerate(req, configuration, deps);
+    assert.equal(response.status, status);
+    assertPublicCors(response);
+    assert.doesNotMatch(await response.text(), /test-server-only-secret|groq|gpt-oss|Authorization|Bearer/i);
+  }
+});
+
+test('bookmarklet and Hub generation share the generation limiter and keep the key out of public JSON', async () => {
+  const limiter = createRateLimiter({ perMinute: 1 });
+  const first = await handleGenerate(request(), env, dependencies({ limiter }));
+  assert.equal(first.status, 200);
+  let called = false;
+  const second = await handleBookmarkletGenerate(publicRequest(), env, dependencies({ limiter, fetch() { called = true; } }));
+  assert.equal(second.status, 429);
+  assertPublicCors(second);
+  assert.equal(called, false);
+  const response = await handleBookmarkletGenerate(publicRequest({ ...payload, model: 'client-model', apiKey: 'client-key' }), env, dependencies({ fetch: async (_, init) => {
+    assert.equal(JSON.parse(init.body).model, 'openai/gpt-oss-20b');
+    assert.equal(init.headers.Authorization, 'Bearer ' + env.GROQ_API_KEY);
+    assert.equal(init.headers.Cookie, undefined);
+    assert.equal(init.headers.Origin, undefined);
+    assert.doesNotMatch(init.body, /client-model|client-key|test-server-only-secret/);
+    return upstream();
+  } }));
+  assert.equal(response.status, 200);
+  assertPublicCors(response);
+  assert.deepEqual(await response.json(), { ...draft, level: 'medio' });
+});
+
+test('bookmarklet supports non-browser clients without Origin and applies cancellation CORS for browsers', async () => {
+  const headers = new Headers({ 'Content-Type': 'application/json' });
+  const req = new Request('https://batata-hub.vercel.app/api/redacao/bookmarklet', { method: 'POST', headers, body: JSON.stringify(payload) });
+  const response = await handleBookmarkletGenerate(req, env, dependencies());
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), null);
+  const controller = new AbortController();
+  controller.abort();
+  const cancelled = await handleBookmarkletGenerate(publicRequest(payload, { signal: controller.signal }), env, dependencies());
+  assert.equal(cancelled.status, 499);
+  assertPublicCors(cancelled);
 });

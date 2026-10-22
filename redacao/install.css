@@ -1,0 +1,2 @@
+.page-redacao-maker .script-preview{max-height:230px;overflow:auto;overscroll-behavior:contain}
+.page-redacao-maker [data-copy]:disabled,.page-redacao-maker [aria-disabled=true]{opacity:.5;cursor:wait}

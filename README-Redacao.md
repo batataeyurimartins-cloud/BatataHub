@@ -1,31 +1,38 @@
-# Redação Maker
+# Redação Maker — hub injetável
 
-Workspace: `/redacao-maker.html`. A interface é estática; a geração usa `POST /api/redacao/generate` em uma Vercel Function Node 24. A função lê somente `GROQ_API_KEY` do ambiente do servidor. Nenhuma credencial vai no favorito ou no navegador. O mesmo segredo já usado pelo BatataGPT atende os dois recursos.
+`/redacao-maker.html` é a página de instalação no formato original do BatataHub. O produto é um bookmarklet: o favorito injeta todo o hub na página da atividade, dentro de um Shadow DOM, sem abrir popup, iframe ou workspace externo.
 
-## Uso
+## Instalação e uso
 
-1. Abra o Redação Maker e salve o favorito mostrado em “Instalar favorito”.
-2. Entre normalmente na página privada da atividade e execute o favorito.
-3. Confira os campos detectados no painel: primeiro campo de texto = título; segundo = redação. Se necessário, use os botões de escolha manual.
-4. Na janela do BatataHub, revise o texto capturado, escolha o nível, limites e preferências. Só clicar em gerar envia a proposta ao servidor.
-5. Edite o resultado, copie-o ou clique em preencher na página. O script nunca submete o formulário. O painel oferece desfazer enquanto os campos não forem alterados novamente.
+1. Abra a página de instalação e copie o novo script ou arraste o botão para a barra de favoritos.
+2. Substitua o favorito antigo. O antigo carregava um script de outro projeto e não recebe esta implementação automaticamente.
+3. Entre normalmente na página da atividade e execute o favorito.
+4. Confira a proposta capturada e os campos detectados: primeiro campo de texto = título; segundo = redação. Há seleção manual se necessário.
+5. No próprio painel injetado, escolha entre Bem simples, Fraco, Médio, Bom e Máximo. Gere, revise e edite o título e a redação antes de preencher.
+6. O Maker preenche somente após sua ação, oferece copiar e desfazer, e não clica em enviar. A página da atividade pode ter mecanismos próprios de salvamento automático.
 
-Se favoritos, popups, editores específicos ou políticas do site impedirem a conexão, cole a proposta e use os botões de copiar. Não é necessário compartilhar login com o BatataHub. A compatibilidade com a página privada real depende de teste por alguém com acesso; o desenvolvimento usa páginas de simulação.
+A compatibilidade com o site privado real depende de teste por alguém com acesso. Não é necessário compartilhar credenciais com o BatataHub. Se a política do site bloquear bookmarklets, estilos ou conexões externas, o navegador pode impedir o funcionamento; o script não tenta contornar essas políticas.
 
-## Captura e comunicação
+## Cliente e captura
 
-`redacao/connector.js` vira um bookmarklet independente, com a origem do Hub inserida pela interface. Não injeta um script remoto na página privada. Captura texto visível de até 40.000 caracteres, excluindo valores de formulários, editores, texto oculto, scripts e estilos. Lê frames visíveis da mesma origem (até 12 documentos e profundidade 3); frames de outra origem e shadow roots de componentes privados não são acessíveis. A captura não inclui query string nem fragmento da URL e não realiza navegação para outras páginas.
+`redacao/install.js` lê `redacao/hub.js`, insere a origem do BatataHub e prepara um bookmarklet independente e codificado como URL. Não há script remoto, chave ou token a instalar na página privada. O código inteiro é salvo no favorito; atualizações exigem substituir o favorito pelo código novo.
 
-O favorito abre uma janela do Hub e comunica-se por `postMessage`. Ambos os lados conferem referência da janela, origem e nonce aleatório de 192 bits por sessão. A primeira mensagem de handshake fixa a origem da página; mensagens com texto usam `targetOrigin` explícito. Propostas e resultados ficam na memória da página, sem persistência em localStorage. O texto revisado é enviado ao serviço de geração quando solicitado, sujeito às políticas de processamento do provedor.
+O hub captura texto visível até 40.000 caracteres, excluindo valores de formulários, editores, texto oculto, scripts, estilos e o próprio painel. Frames visíveis da mesma origem podem ser lidos; frames de outra origem e componentes com Shadow DOM fechado são inacessíveis. A captura não inclui cookies, HTML, atributos de autenticação, query string nem fragmento da URL. O usuário revisa o texto antes de clicar em gerar; apenas essa proposta e as preferências são enviadas ao endpoint.
 
-Preenchimento usa setters nativos e eventos `input`/`change`; contenteditable recebe texto, nunca HTML. Campos desconectados, não editáveis, iguais, alterados desde a captura ou com limites insuficientes são recusados. Editores que exigem APIs próprias podem precisar do modo copiar/colar. Os níveis mudam complexidade, sem inserir erros intencionais. Limites orientam a geração e a interface mostra a contagem real para revisão.
+Propostas e resultados ficam na memória da página, sem armazenamento persistente. Mudanças na proposta ou preferências invalidam resultados antigos para preenchimento e cancelam ou descartam gerações em andamento. Fechar cancela a requisição e remove o painel. Abrir novamente foca/reabre a mesma instância.
 
-## API e validação
+Preenchimento usa setters nativos com eventos input/change. Contenteditable usa nós de texto e BRs criados pelo script, nunca HTML do modelo. Há verificação dos campos conectados, leitura após preenchimento, limites, mudanças desde a captura e rollback em falhas. Desfazer preserva edições posteriores. Editores que exigem APIs próprias podem precisar de copiar/colar.
 
-Entrada: `{ context, level, instructions?, minChars?, maxChars? }`. Níveis: `simple`, `fraco`, `medio`, `bom`, `maximo`. Contexto de 20–40.000 caracteres; notas de até 3.000; limites inteiros de 300–12.000. Resposta: `{ title, essay, level }`, título de uma linha até 180 caracteres e redação em texto simples, parágrafos separados por linha em branco.
+## Servidor e CORS
 
-O endpoint aceita JSON da mesma origem, não oferece CORS público, limita corpos/respostas, valida o JSON gerado, cancela em desconexão e tem timeout de 55 segundos. O limitador é separado do chat (3/minuto, 25/hora, 1 simultânea por IP), mas é apenas por instância e não constitui uma cota global persistente. Logs não incluem proposta, resposta, segredo nem erro bruto do provedor. A configuração de modelo permanece no servidor.
+`POST /api/redacao/bookmarklet` aceita JSON de páginas HTTP(S) de outras origens, deliberadamente, pois o favorito precisa funcionar dentro do site privado desconhecido. Preflight permite somente POST e Content-Type; não aceita credenciais/cookies e não expõe segredos. O endpoint existente `/api/redacao/generate` continua restrito à mesma origem. Ambos usam a mesma validação e o mesmo limitador de redação.
 
-## Verificação e publicação
+Entrada: `{ context, level, instructions?, minChars?, maxChars? }`. Níveis: `simple`, `fraco`, `medio`, `bom`, `maximo`. Contexto de 20–40.000 caracteres; notas até 3.000; limites inteiros de 300–12.000. Resposta: `{ title, essay, level }`. Os níveis mudam complexidade sem inserir erros intencionais; limites orientam a geração e a contagem real permite revisar.
 
-`npm test` executa os testes de servidor. `npm run build` publica somente páginas e pastas de assets aprovadas, incluindo `redacao/`; `server/`, `tests/` e estes documentos não vão para `public/`. `api/redacao/generate.js` é empacotado como função nativa, com duração máxima de 60 segundos e suporte a cancelamento. Publicação ocorre pela integração GitHub → Vercel do BatataHub.
+O servidor usa exclusivamente `GROQ_API_KEY` do ambiente Vercel já configurado. Não há chave no cliente, código do favorito, resposta da API ou logs. O modelo é configurado no servidor, a resposta JSON é validada, o corpo e a resposta têm limites, há cancelamento e timeout de 55 s. A chave é enviada somente ao endpoint fixo do provedor. A proposta revisada é processada pelo serviço de geração, sujeito às políticas do provedor.
+
+O limitador de redação é separado do chat: 3/minuto, 25/hora e 1 simultânea por IP, com 8 simultâneas totais por instância. É uma proteção por instância, não uma cota global persistente.
+
+## Build e validação
+
+`npm test` cobre servidor e políticas CORS; `npm run build` publica somente páginas e pastas aprovadas, incluindo redacao/. `server/`, `tests/` e documentos operacionais ficam fora de public/. As funções nativas Node 24 têm duração máxima de 60 s e cancelamento. A integração GitHub → Vercel publica a alteração.

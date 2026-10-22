@@ -12,6 +12,10 @@
       "maxDuration": 60,
       "supportsCancellation": true
     },
+    "api/redacao/bookmarklet.js": {
+      "maxDuration": 60,
+      "supportsCancellation": true
+    },
     "api/batatagpt/health.js": {
       "maxDuration": 10
     }
