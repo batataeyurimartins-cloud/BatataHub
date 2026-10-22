@@ -8,6 +8,10 @@
       "maxDuration": 60,
       "supportsCancellation": true
     },
+    "api/redacao/generate.js": {
+      "maxDuration": 60,
+      "supportsCancellation": true
+    },
     "api/batatagpt/health.js": {
       "maxDuration": 10
     }
