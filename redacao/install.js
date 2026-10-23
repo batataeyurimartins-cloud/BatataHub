@@ -8,12 +8,14 @@ link.addEventListener('click', event => {
 });
 
 try {
-  const response = await fetch('redacao/hub.js', { credentials: 'same-origin' });
+  const response = await fetch('redacao/hub.js', { credentials: 'same-origin', cache: 'no-store' });
   if (!response.ok) throw new Error();
   const source = await response.text();
-  if (!source.includes('__BATATAHUB_ORIGIN__') || source.length > 150000) throw new Error();
-  const bookmarklet = 'javascript:' + encodeURIComponent(source.replaceAll('__BATATAHUB_ORIGIN__', location.origin));
+  if (!source.includes("const PANEL_ID = 'redator-batata-console';") || !source.includes("const SERVICE_ORIGIN = 'https://redacao-maker.vercel.app';") || source.length > 150000) throw new Error();
+  const bookmarklet = 'javascript:' + encodeURIComponent(source);
   code.textContent = bookmarklet;
+  link.textContent = 'Arrastar Redator Batata';
+  link.title = 'Redator Batata';
   link.href = bookmarklet;
   link.removeAttribute('aria-disabled');
   buttons.forEach(button => { button.disabled = false; });
