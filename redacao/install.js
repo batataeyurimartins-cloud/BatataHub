@@ -10,6 +10,10 @@ for (const link of links) {
 }
 
 function prepareBookmarklet(bookmarklet) {
+  if (!bookmarklet.startsWith('javascript:') || bookmarklet.length > 4096 ||
+      !decodeURIComponent(bookmarklet.slice('javascript:'.length)).includes('https://redacao-maker.vercel.app/hub.js')) {
+    throw new Error('Bookmarklet original inválido.');
+  }
   code.textContent = bookmarklet;
   for (const link of links) {
     link.title = 'Redator Batata';
@@ -25,11 +29,9 @@ try {
     prepareBookmarklet(publishedBookmarklet);
   } else {
     // Also support opening the source page on a local static server.
-    const response = await fetch('redacao/hub.js', { credentials: 'same-origin', cache: 'no-store' });
+    const response = await fetch('redacao/bookmarklet.txt', { credentials: 'same-origin', cache: 'no-store' });
     if (!response.ok) throw new Error();
-    const source = await response.text();
-    if (!source.includes("const PANEL_ID = 'redator-batata-console';") || !source.includes("const SERVICE_ORIGIN = 'https://redacao-maker.vercel.app';") || source.length > 150000) throw new Error();
-    prepareBookmarklet('javascript:' + encodeURIComponent(source));
+    prepareBookmarklet((await response.text()).trim());
   }
 } catch (_) {
   code.textContent = 'Não foi possível preparar o favorito. Atualize a página para tentar novamente.';

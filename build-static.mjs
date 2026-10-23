@@ -14,15 +14,13 @@ for (const name of [...pages, ...directories]) {
   await cp(new URL(name, root), new URL(name, output), { recursive: true });
 }
 
-// Ship a ready-to-save favorite in the page itself, including when the runtime
-// download is unavailable. Keep its complete code so it works without a loader.
-const source = await readFile(new URL('redacao/hub.js', root), 'utf8');
-if (!source.includes("const PANEL_ID = 'redator-batata-console';") ||
-    !source.includes("const SERVICE_ORIGIN = 'https://redacao-maker.vercel.app';") ||
-    source.length > 150000) {
-  throw new Error('Runtime do Redator Batata inválido para preparar o bookmarklet.');
+// Distribute the original Redator bookmarklet, which loads the maintained
+// runtime from its canonical project instead of saving a separate hub snapshot.
+const bookmarklet = (await readFile(new URL('redacao/bookmarklet.txt', root), 'utf8')).trim();
+if (!bookmarklet.startsWith('javascript:') || bookmarklet.length > 4096 ||
+    !decodeURIComponent(bookmarklet.slice('javascript:'.length)).includes('https://redacao-maker.vercel.app/hub.js')) {
+  throw new Error('Bookmarklet original do Redator Batata inválido.');
 }
-const bookmarklet = 'javascript:' + encodeURIComponent(source);
 const escapedBookmarklet = bookmarklet.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const installationPath = new URL('redacao-maker.html', output);
 let installation = await readFile(installationPath, 'utf8');
