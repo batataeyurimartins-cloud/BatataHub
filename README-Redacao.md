@@ -4,7 +4,7 @@
 
 ## Instalação e uso
 
-1. Abra `/redacao-maker.html`, copie o script ou arraste “Arrastar Redator Batata” para a barra de favoritos.
+1. Abra `/redacao-maker.html` e arraste o botão “★ Redator Batata — Bookmarklet”, no topo, para a barra de favoritos. No celular, use “Copiar bookmarklet” e cole o endereço na URL de um favorito.
 2. Substitua o favorito antigo. O código inteiro fica salvo no favorito; para atualizar uma instalação existente, copie novamente.
 3. Entre na página da atividade e execute o favorito.
 4. Confira o texto em Referência; use Ler página, Ler seleção ou cole a proposta.
@@ -15,7 +15,7 @@ O painel usa Shadow DOM e preserva os eventos necessários para que editores com
 
 ## Cliente e integração
 
-`redacao/hub.js` é uma cópia integral do runtime v1.10.1 de `batataeyurimartins-cloud/Redacao-Maker` (`redator-batata.js`). `redacao/install.js` lê esse arquivo local sem cache, valida a identidade do painel e a origem canônica, e gera o bookmarklet com o código completo codificado como URL. Não há substituição de `__BATATAHUB_ORIGIN__`, chave ou token no cliente e não é necessário carregar um script remoto na página da atividade.
+`redacao/hub.js` é uma cópia integral do runtime v1.10.1 de `batataeyurimartins-cloud/Redacao-Maker` (`redator-batata.js`). O build valida a identidade e a origem canônica e incorpora o bookmarklet completo nos dois botões e na área de copiar da página publicada. Assim, os favoritos já estão disponíveis sem baixar o runtime durante a instalação. `redacao/install.js` mantém o carregamento sem cache como alternativa para servir o HTML fonte localmente. Não há substituição de `__BATATAHUB_ORIGIN__`, chave ou token no cliente e não é necessário carregar um script remoto na página da atividade.
 
 A geração usa exclusivamente `https://redacao-maker.vercel.app/api/generate`. A conexão auxiliar usa `https://redacao-maker.vercel.app/connection.html`; a identidade pública de saúde do serviço continua `batata`. O runtime não depende dos endpoints antigos `/api/redacao/generate` e `/api/redacao/bookmarklet` do BatataHub, que permanecem disponíveis para compatibilidade com instalações anteriores.
 

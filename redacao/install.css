@@ -1,2 +1,4 @@
 .page-redacao-maker .script-preview{max-height:230px;overflow:auto;overscroll-behavior:contain}
 .page-redacao-maker [data-copy]:disabled,.page-redacao-maker [aria-disabled=true]{opacity:.5;cursor:wait}
+.page-redacao-maker .bookmarklet-hint{margin-top:12px;max-width:520px;color:var(--dim);font-size:.875rem;line-height:1.7}
+@media(max-width:600px){.page-redacao-maker .hero-actions [data-bookmarklet]{flex-basis:100%}.page-redacao-maker .copy-actions .btn{white-space:normal}}
