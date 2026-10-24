@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Leve o Lume para a sua barra de favoritos e abra seu hub automático com um clique na página da atividade.">
+  <title>Lume · BatataHub</title>
+  <link rel="stylesheet" href="/scripts/lume/style.css">
+  <script src="/scripts/lume/install.js" defer></script>
+</head>
+<body>
+  <header class="header wrap">
+    <a class="brand" href="/scripts.html" aria-label="BatataHub, voltar aos scripts"><span class="brand-icon" aria-hidden="true">✳</span><strong>lume</strong><span class="brand-caption">/ BatataHub</span></a>
+    <span class="header-note"><span aria-hidden="true"></span>Público · pronto para usar</span>
+  </header>
+  <main class="wrap layout">
+    <section class="intro" aria-labelledby="title">
+      <div class="eyebrow"><span aria-hidden="true">✧</span> Seu hub, sempre por perto.</div>
+      <h1 id="title">Salve uma vez.<br>Use em <span>um clique.</span></h1>
+      <p class="lead">O Lume fica nos seus favoritos. Abra uma atividade, clique no favorito e use Responder tarefa. Acompanhe o preenchimento em um painel pequeno e discreto.</p>
+      <ol class="steps" aria-label="Como instalar e usar">
+        <li><span class="step-number">01</span><div><strong>Mostre a barra de favoritos</strong><p>No computador, use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>. No Mac, <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>.</p></div></li>
+        <li><span class="step-number">02</span><div><strong>Arraste o botão para a barra</strong><p>Salve o botão “Lume automático” nos favoritos do navegador.</p></div></li>
+        <li><span class="step-number">03</span><div><strong>Abra a atividade e clique no favorito</strong><p>Clique em Responder tarefa. O hub lê texto e imagens das questões, mostra o nome da tarefa e zera o contador ao trocar de atividade.</p></div></li>
+      </ol>
+    </section>
+    <section class="installer" aria-labelledby="installer-title">
+      <div class="card-head"><span class="card-symbol" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Leve para seus favoritos</span><span class="pill">BOOKMARKLET</span></div>
+      <h2 id="installer-title">Seu hub a um clique.</h2>
+      <p class="card-copy">Arraste o botão abaixo para a barra de favoritos. Depois, use-o na página da atividade.</p>
+      <a class="primary bookmarklet" id="bookmarklet-link" href="javascript:void(0)" draggable="true" title="Arraste para a barra de favoritos"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 3.5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1V17l-5-3-5 3V3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Lume automático</span><span class="drag-hint" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <p class="drag-note">Arraste para a barra de favoritos <span aria-hidden="true">↑</span></p>
+      <div class="bookmark-actions"><button class="download" id="copy-bookmarklet" type="button">Copiar bookmarklet</button><span aria-hidden="true">·</span><button class="download" id="download-bookmark" type="button">Baixar favorito</button></div>
+      <p class="feedback" id="feedback" role="status" aria-live="polite" hidden></p>
+      <div class="fallback" id="copy-fallback" hidden><label for="generated-script" id="generated-label">Seu código está pronto</label><p class="help" id="generated-help"></p><textarea id="generated-script" readonly spellcheck="false" rows="6" aria-label="Código gerado para copiar"></textarea><button class="select-code" id="select-script" type="button">Selecionar código</button></div>
+      <details class="console-fallback"><summary>Usar pelo console</summary><p class="help">Se o site bloquear o favorito, copie o script completo e execute no console da atividade. No computador, abra <kbd>F12</kbd> e selecione <strong>Console</strong>.</p><button class="secondary-action" id="copy-script" type="button">Copiar script para o console</button><button class="download" id="download-script" type="button">Baixar script .js <span aria-hidden="true">↓</span></button></details>
+      <p class="help mobile-tip">No celular, copie o bookmarklet e edite o endereço de um favorito para colar o código. O suporte varia entre navegadores.</p>
+      <div class="card-foot"><span class="tiny-dot" aria-hidden="true"></span>Público. Sem código de acesso ou chave para instalar.</div>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>Lume <span class="footer-divider">/</span> BatataHub</span><p>A IA pode errar. Confira as respostas preenchidas.</p></footer>
+</body>
+</html>

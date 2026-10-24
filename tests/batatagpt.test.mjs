@@ -51,12 +51,15 @@ test('route entry points use the supported native Web handler and preserve stati
   assert.equal((await chatRoute.fetch(new Request('https://batata-hub.vercel.app/api/batatagpt/chat'))).status, 405);
   const config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url)));
   assert.equal(config.framework, null);
-  assert.equal(config.rewrites, undefined);
+  assert.deepEqual(config.rewrites, [{
+    source: '/api/lume/solve',
+    destination: 'https://lume-groq-hub.vercel.app/api/solve',
+  }], 'Only the Lume endpoint may be proxied; existing API and static routes must remain unchanged');
   assert.equal(config.routes, undefined);
   assert.equal(config.outputDirectory, 'public');
   assert.equal(config.functions['api/batatagpt/chat.js'].supportsCancellation, true);
   assert.equal(config.functions['api/batatagpt/chat.js'].maxDuration, 60);
-  await Promise.all(['index.html', 'games.html', 'scripts.html', 'redacao-maker.html', 'farm-moedas-leia.html'].map(path => access(new URL('../' + path, import.meta.url))));
+  await Promise.all(['index.html', 'games.html', 'scripts.html', 'redacao-maker.html', 'farm-moedas-leia.html', 'lume.html'].map(path => access(new URL('../' + path, import.meta.url))));
 });
 
 test('missing server key gives visitors an unavailable response without asking for a key', async () => {

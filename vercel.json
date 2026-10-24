@@ -19,5 +19,44 @@
     "api/batatagpt/health.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/lume/solve",
+      "destination": "https://lume-groq-hub.vercel.app/api/solve"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/scripts/lume/bookmarklet.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/scripts/lume/hub.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/scripts/lume/install.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ]
 }
