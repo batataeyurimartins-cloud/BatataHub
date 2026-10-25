@@ -29,8 +29,14 @@ installation = installation.replace(/<a\b[^>]*\bdata-bookmarklet\b[^>]*>/g, tag 
   bookmarkletLinks++;
   return tag.replace(/href="[^"]*"/, `href="${escapedBookmarklet}"`).replace(/ aria-disabled="true"/, '');
 });
-if (bookmarkletLinks !== 2) throw new Error('Os dois atalhos do bookmarklet devem estar presentes.');
-installation = installation.replace(/<code id="scriptCode">[^<]*<\/code>/, `<code id="scriptCode">${escapedBookmarklet}</code>`);
-installation = installation.replace(/<button\b[^>]*\bdata-copy\b[^>]*>/g, tag => tag.replace(/ disabled\b/, ''));
+if (bookmarkletLinks !== 1) throw new Error('O botão de instalação do Redator Batata deve estar presente.');
 await writeFile(installationPath, installation);
+await writeFile(new URL('redacao/favorito-batata.html', output), `<!DOCTYPE NETSCAPE-Bookmark-file-1>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>Redator Batata</TITLE>
+<H1>Redator Batata</H1>
+<DL><p>
+    <DT><A HREF="${escapedBookmarklet}">Redator Batata</A>
+</DL><p>
+`);
 console.log(`Site preparado em ${fileURLToPath(output)}`);
